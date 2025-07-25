@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="大野直人のポートフォリオサイト。Webデザイン・バナー制作・ロゴ制作などを紹介しています。">
+  <!-- ogp -->
+  <meta property="og:url" content="">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Naoto Ono Portfolio">
+  <meta property="og:description" content="">
+  <meta property="og:site_name" content="Naoto Ono Portfolio">
+  <meta property="og:image" content="">
+  <!-- favicon apple-touch-icon -->
+  <link rel="shortcut icon" href="assets/images/TopLogo.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/TopLogo.png">
+  <link rel="icon" type="image/png" href="assets/images/TopLogo.png">
+
+  <title>Naoto Ono Portfolio</title>
+
+  <!-- web font -->
+  <!-- web font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
+    rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+
+
+
+  <!-- css -->
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/works.css">
+  <link rel="stylesheet" href="css/destyle.css">
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body>
+  <!-- ✅ ローディング画面 -->
+  <div id="loader">
+    <div class="loader-inner">
+      <p>Loading...</p>
+      <!-- アニメーションやロゴもここに -->
+    </div>
+  </div>
+  <div id="main-content" style="display: none;"></div>
+  <header id="header">
+
+    <a href="index.html" class="header-logo">
+      <img src="assets/images/logo.png" alt="名前ロゴ">
+    </a>
+
+    <div class="header-box">
+
+      <!-- ハンバーガーアイコン（SPのみ表示） -->
+      <button class="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="header-nav">
+        <ul>
+          <li class="nav-list"><a href="#top" aria-label="トップへ">Top</a></li>
+          <li class="nav-list"><a href="profile.html" aria-label="自己紹介セクションへ">About</a></li>
+          <li class="nav-list"><a href="index.html#works" aria-label="制作物セクションへ">Works</a></li>
+          <li class="nav-list"><a href="#contact" aria-label="お問い合わせセクションへ">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <section id="detail" class="section section-detail">
+      <div class="detail-box">
+        <div class="detail-list">
+          <div class="detail-left">
+            <h1 class="detail-title">Generative AI <br>seminar Banner</h1>
+            <h2>SmartFlow様が主催するオンラインセミナーの販促バナー</h2>
+
+          </div>
+
+          <div class="detail-right">
+            <div class="schedule-item">
+              <p class="schedule-label">企画</p>
+              <p class="schedule-duration">1日</p>
+            </div>
+
+            <div class="schedule-item">
+              <p class="schedule-label">デザイン</p>
+              <p class="schedule-duration">8時間</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="detail-img">
+          <img src="assets/images/works-img4.png" alt="Famille様サムネイル">
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="section section-process">
+      <div class="process-list">
+        <article class="process-item">
+          <div class="process-left">
+            <h3 class="process-ja">サイズ</h3>
+            <p class="process-en">Size</p>
+          </div>
+          <div class="process-right">
+            <p class="process-txt">1080px × 1080px</p>
+          </div>
+        </article>
+        <article class="process-item">
+          <div class="process-left">
+            <h3 class="process-ja">ターゲット</h3>
+            <p class="process-en">Target</p>
+          </div>
+          <div class="process-right">
+            <p class="process-txt">主に中小企業の管理職向け。（特に30～50代の課長・部長クラス）
+              業務が多忙で時間管理に課題があり、経営者から効率化を求められている立場。
+              デジタルツールに対する理解はあるが、活用に自信がない。</p>
+          </div>
+        </article>
+
+        <article class="process-item">
+          <div class="process-left">
+            <h3 class="process-ja">課題</h3>
+            <p class="process-en">Task</p>
+          </div>
+          <div class="process-right">
+            <p class="process-txt">生成AIという名前は知っているが、実際に業務に組み込むまで使い慣れていない人が多い。</p>
+          </div>
+        </article>
+
+        <article class="process-item">
+          <div class="process-left">
+            <h3 class="process-ja">目標</h3>
+            <p class="process-en">Goal</p>
+          </div>
+          <div class="process-right">
+            <p class="process-txt">ターゲットに向けてバナーを通して、セミナー参加を促す。また、セミナー参加を通じて生成AIを使った知識やノウハウを提供し、自社のサービスへとつなげる。</p>
+          </div>
+        </article>
+
+        <article class="process-item">
+          <div class="process-left">
+            <h3 class="process-ja">デザイン</h3>
+            <p class="process-en">Design</p>
+          </div>
+          <div class="process-right">
+            <p class="process-txt">生成AIが持つ「革新性」を視覚的に伝えるとともに、ビジネスシーンへの導入ハードルを下げ、より身近に感じてもらえるよう意識してデザインしました。
+              ビジネスシーンに馴染むブルーのグラデーションに幾何学模様を合わせることで、信頼感と知的な印象をつけました。キャッチコピーにはホワイトとアクセントカラーとしてオレンジを使用し、前向きでエネルギッシュな雰囲気を加えました。文字情報には、日付のフォントをRobotoに変更することでより視認性を上げました。
+            </p>
+            <img src="assets/images/process-color4.png" alt="">
+          </div>
+        </article>
+
+
+
+      </div>
+
+    </section>
+    <section id="other" class="section section-other">
+
+      <div class="other-box">
+        <div class="section-box">
+          <h2 class="section-en">Other</h2>
+
+        </div>
+        <div class="swiper other-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="assets/images/works-img1.png" alt="作品1"></div>
+            <div class="swiper-slide"><img src="assets/images/works-img4.png" alt="作品2"></div>
+            <div class="swiper-slide"><img src="assets/images/works-img5.png" alt="作品3"></div>
+          </div>
+        </div>
+
+        <!-- 独自のボタン -->
+        <div class="custom-buttons">
+          <!-- 前へボタン（←） -->
+          <button id="btn-prev" class="circle-button">
+            <svg class="arrow-icon" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+              <circle class="circle-outline" cx="30" cy="30" r="28" />
+              <path class="arrow-path" d="M38 30 H22 M25 27 L22 30 L25 33" />
+            </svg>
+          </button>
+
+          <!-- 次へボタン（→） -->
+          <button id="btn-next" class="circle-button">
+            <svg class="arrow-icon" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+              <circle class="circle-outline" cx="30" cy="30" r="28" />
+              <path class="arrow-path" d="M22 30 H38 M35 27 L38 30 L35 33" />
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="section section-contact">
+    <div class="footer-box">
+      <div class="contact-item">
+        <h2 class="contact-en">CONTACT</h2>
+        <a href="mailto:tu" class="contact-button" aria-label="メールで連絡する">
+          <svg class="circle-icon" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <circle class="circle-bg" cx="30" cy="30" r="28" />
+            <path class="contact-arrow" d="M20 30h20M38 28l2 2-2 2" />
+          </svg>
+        </a>
+      </div>
+      <nav class="footer-nav">
+        <ul class="footer-list">
+          <li><a href="#top" aria-label="トップへ">TOP</a></li>
+          <li>
+            <a href="#about" aria-label="自己紹介セクションへ">ABOUT</a>
+          </li>
+          <li><a href="#works" aria-label="制作物セクションへ">WORKS</a></li>
+        </ul>
+      </nav>
+      <p class="footer-name">© 2025 Ono Naoto</p>
+      <img class="contact-svg" src="assets/images/Contact.svg" alt="" />
+    </div>
+  </footer>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+
+
+</body>
+
+</html>

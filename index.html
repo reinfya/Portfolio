@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="大野直人のポートフォリオサイト。Webデザイン・バナー制作・ロゴ制作などを紹介しています。" />
+    <!-- ogp -->
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Naoto Ono Portfolio" />
+    <meta property="og:description" content="" />
+    <meta property="og:site_name" content="Naoto Ono Portfolio" />
+    <meta property="og:image" content="" />
+    <!-- favicon apple-touch-icon -->
+    <link rel="shortcut icon" href="assets/images/TopLogo.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/TopLogo.png" />
+    <link rel="icon" type="image/png" href="assets/images/TopLogo.png" />
+
+    <title>Naoto Ono Portfolio</title>
+
+    <!-- web font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
+        rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet" />
+
+    <!-- css -->
+
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/destyle.css" />
+</head>
+
+<body>
+    <!-- ✅ ローディング画面 -->
+    <!-- <div id="loader">
+        <div class="loader-inner">
+            <p>Loading...</p>
+            
+        </div>
+    </div> -->
+    <div id="main-content" style="display: none"></div>
+    <header id="header">
+
+        <div>
+            <div class="header-box">
+                <a href="index.html" class="header-logo">
+                    <img src="assets/images/logo-fv.png" alt="名前ロゴ" />
+                </a>
+
+
+                <nav id="nav" class="header-nav">
+                    <ul>
+                        <li class="nav-list">
+                            <a href="#top" aria-label="トップへ">TOP</a>
+                        </li>
+                        <li class="nav-list">
+                            <a href="profile.html" aria-label="自己紹介セクションへ">ABOUT</a>
+                        </li>
+                        <li class="nav-list">
+                            <a href="#works" aria-label="制作物セクションへ">WORKS</a>
+                        </li>
+                        <li class="nav-list">
+                            <a href="#contact" aria-label="お問い合わせセクションへ">CONTACT</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="header-sp">
+
+                    <!-- ハンバーガーアイコン（SPのみ表示） -->
+                    <button class="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                </div>
+
+
+            </div>
+    </header>
+    <div class="menu-overlay">
+        <nav id="nav-sp" class="header-sp-nav">
+            <ul class="nav-wrapper">
+                <li class="nav-list">
+                    <a href="#top" aria-label="トップへ">TOP</a>
+                </li>
+                <li class="nav-list">
+                    <a href="profile.html" aria-label="自己紹介セクションへ">ABOUT</a>
+                </li>
+                <li class="nav-list">
+                    <a href="#works" aria-label="制作物セクションへ">WORKS</a>
+                </li>
+                <li class="nav-list">
+                    <a href="#contact" aria-label="お問い合わせセクションへ">CONTACT</a>
+                </li>
+            </ul>
+            <img class="menu-svg" src="assets/images/menu.svg" alt="menu">
+        </nav>
+    </div>
+
+
+    <main class="main">
+        <section id="fv" class="section section-fv">
+            <video class="fv-bg-video" src="assets/images/fv-bg.mp4" autoplay muted loop playsinline></video>
+
+            <h1 class="fv-title">
+                <span class="fv-name">このデザインが、<br /></span>
+                <span class="fv-name">あなたの</span>
+                <img class="fv-hosi" src="assets/images/fv-hosi.png" alt="星" class="fv-img" />
+                <span class="fv-name">になるように。<br /></span>
+                <span class="fv-en">Let this design be someone's guiding star.</span>
+            </h1>
+        </section>
+
+        <section id="about" class="section section-about">
+            <div class="section-box">
+                <h2 class="section-en">ABOUT</h2>
+                <div class="section-line"></div>
+                <p class="section-ja">わたしについて</p>
+            </div>
+            <div class="about-box">
+                <div class="about-left">
+                    <img class="about-logo " src="assets/images/logo-about.png" alt="名前ロゴ" />
+                    <h3 class="about-kanji">大野 直人</h3>
+                    <p class="about-txt">
+                        デザインやアニメーションで記憶に残る体験を提供できるwebデザインに興味をもち、2024年10月よりデジタルハリウッドSTUDIO
+                        by LIGに入学。 一度見ただけなのに、なぜか心に残っている。
+                        ユーザーの体験を導き、道を照らせる星のようなwebサイト制作を目指しています。
+                    </p>
+                    <div class="btn btn-about">
+                        <a href="profile.html" class="works-arrow">
+                            <span class="view-more splittext">View more</span>
+                            <span class="arrow">
+                                <svg width="30" height="30" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20 30h20 M38 28l4 2-4 2" stroke="#000" stroke-width="3" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+
+                            <span class="line"></span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="about-right">
+                    <img class="about-img" src="assets/images/my-photo.png" alt="プロフィール写真" />
+                </div>
+                <img class="about-svg" src="assets/images/About.svg" alt="背景svg" />
+            </div>
+        </section>
+
+        <section id="works" class="section section-works">
+            <div class="section-box section-box-works">
+                <h2 class="section-en">WORKS</h2>
+                <div class="section-line section-line-works"></div>
+                <p class="section-ja">制作物</p>
+            </div>
+            <div class="works-box">
+                <div class="works-list">
+                    <article class="works-item">
+                        <div class="works-left">
+                            <img class="works-img" src="assets/images/works-img1.png" alt="Famille様サムネイル" />
+                        </div>
+                        <div class="works-right">
+                            <div>
+                                <h4 class="works-en">Trimming salon <br />Website</h4>
+
+                                <ul class="works-hashtag">
+                                    <li>#Website</li>
+                                    <li>#自主制作</li>
+                                </ul>
+                                <h5 class="works-ja">
+                                    トリミングサロンFamille様のwebサイトを作成しました。
+                                </h5>
+                            </div>
+                            <div class="btn btn-works">
+                                <a href="works-1.html" class="works-arrow">
+                                    <span class="view-more splittext">View more</span>
+                                    <span class="arrow">
+                                        <svg width="30" height="30" viewBox="0 0 60 60"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20 30h20 M38 28l4 2-4 2" stroke="#000" stroke-width="3"
+                                                fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </span>
+
+                                    <span class="line"></span>
+                                </a>
+                            </div>
+                        </div>
+                        <img class="works-svg" src="assets/images/works-01.svg" alt="" />
+                    </article>
+
+                    <article class="works-item">
+                        <div class="works-left">
+                            <img class="works-img" src="assets/images/works-img1.png" alt="ポートフォリオサイトサムネイル" />
+                        </div>
+                        <div class="works-right">
+                            <div>
+                                <h4 class="works-en">
+                                    Naoto Ono<br />
+                                    Portfolio Site
+                                </h4>
+
+                                <ul class="works-hashtag">
+                                    <li>#Website</li>
+                                    <li>#自主制作</li>
+                                </ul>
+                                <h5 class="works-ja">
+                                    自身のポートフォリオサイトを作成しました。
+                                </h5>
+                            </div>
+                            <div class="btn btn-works">
+                                <a href="works-1.html" class="works-arrow">
+                                    <span class="view-more splittext">View more</span>
+                                    <span class="arrow">
+                                        <svg width="30" height="30" viewBox="0 0 60 60"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20 30h20 M38 28l4 2-4 2" stroke="#000" stroke-width="3"
+                                                fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </span>
+
+                                    <span class="line"></span>
+                                </a>
+                            </div>
+                        </div>
+                        <img class="works-svg" src="assets/images/works-02.svg" alt="" />
+                    </article>
+
+                    <article class="works-item">
+                        <div class="works-left">
+                            <img class="works-img" src="assets/images/works-img1.png" alt="ポートフォリオサイトサムネイル" />
+                        </div>
+                        <div class="works-right">
+                            <div>
+                                <h4 class="works-en">REELIZE <br />Company Site</h4>
+
+                                <ul class="works-hashtag">
+                                    <li>#Website</li>
+                                    <li>#自主制作</li>
+                                </ul>
+                                <h5 class="works-ja">
+                                    ドローン映像制作会社REELIZE様のwebサイトを作成しました。
+                                </h5>
+                            </div>
+                            <div class="btn btn-works">
+                                <a href="works-3.html" class="works-arrow">
+                                    <span class="view-more splittext">View more</span>
+                                    <span class="arrow">
+                                        <svg width="30" height="30" viewBox="0 0 60 60"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20 30h20 M38 28l4 2-4 2" stroke="#000" stroke-width="3"
+                                                fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </span>
+
+                                    <span class="line"></span>
+                                </a>
+                            </div>
+                        </div>
+                        <img class="works-svg" src="assets/images/works-03.svg" alt="" />
+                    </article>
+                    <article class="works-item">
+                        <div class="works-left">
+                            <img class="works-img" src="assets/images/works-img7.png" alt="REELIZE様サムネイル" />
+                        </div>
+                        <div class="works-right">
+                            <div>
+                                <h4 class="works-en">Vegetable sales <br />landing page</h4>
+
+                                <ul class="works-hashtag">
+                                    <li>#LP</li>
+                                    <li>#スクール課題</li>
+                                </ul>
+                                <h5 class="works-ja">
+                                    オーガニック野菜宅配サービススグ食べ様のLPを作成しました。
+                                </h5>
+                            </div>
+                            <div class="btn btn-works">
+                                <a href="works-1.html" class="works-arrow">
+                                    <span class="view-more splittext">View more</span>
+                                    <span class="arrow">
+                                        <svg width="30" height="30" viewBox="0 0 60 60"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20 30h20 M38 28l4 2-4 2" stroke="#000" stroke-width="3"
+                                                fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </span>
+
+                                    <span class="line"></span>
+                                </a>
+                            </div>
+                        </div>
+                        <img class="works-svg" src="assets/images/works-07.svg" alt="" />
+                    </article>
+                    <article class="works-item">
+                        <div class="works-left">
+                            <img class="works-img" src="assets/images/works-img4.png" alt="Smartflow様サムネイル" />
+                        </div>
+                        <div class="works-right">
+                            <div>
+                                <h4 class="works-en">Generative AI <br />seminar banner</h4>
+
+                                <ul class="works-hashtag">
+                                    <li>#Banner</li>
+                                    <li>#自主制作</li>
+                                </ul>
+                                <h5 class="works-ja">
+                                    SmartFlow様主催の業務効率化セミナーの販促バナーを作成しました。
+                                </h5>
+                            </div>
+                            <div class="btn btn-works">
+                                <a href="works-4.html" class="works-arrow">
+                                    <span class="view-more splittext">View more</span>
+                                    <span class="arrow">
+                                        <svg width="30" height="30" viewBox="0 0 60 60"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20 30h20 M38 28l4 2-4 2" stroke="#000" stroke-width="3"
+                                                fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </span>
+
+                                    <span class="line"></span>
+                                </a>
+                            </div>
+                        </div>
+                        <img class="works-svg" src="assets/images/works-04.svg" alt="" />
+                    </article>
+
+                    <article class="works-item">
+                        <div class="works-left">
+                            <img class="works-img" src="assets/images/works-img5.png" alt="雫屋様サムネイル" />
+                        </div>
+                        <div class="works-right">
+                            <div>
+                                <h4 class="works-en">Matcha Pancake <br />Promo Banner</h4>
+
+                                <ul class="works-hashtag">
+                                    <li>#Banner</li>
+                                    <li>#自主制作</li>
+                                </ul>
+                                <h5 class="works-ja">
+                                    甘味処 雫屋様の期間限定商品の販促バナーを作成しました。
+                                </h5>
+                            </div>
+                            <div class="btn btn-works">
+                                <a href="works-5.html" class="works-arrow">
+                                    <span class="view-more splittext">View more</span>
+                                    <span class="arrow">
+                                        <svg width="30" height="30" viewBox="0 0 60 60"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20 30h20 M38 28l4 2-4 2" stroke="#000" stroke-width="3"
+                                                fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </span>
+
+                                    <span class="line"></span>
+                                </a>
+                            </div>
+                        </div>
+                        <img class="works-svg" src="assets/images/works-05.svg" alt="" />
+                    </article>
+
+                    <article class="works-item">
+                        <div class="works-left">
+                            <img class="works-img" src="assets/images/works-img6.png" alt="雫屋様サムネイル" />
+                        </div>
+                        <div class="works-right">
+                            <div>
+                                <h4 class="works-en">Sign Language <br />Club Logo</h4>
+
+                                <ul class="works-hashtag">
+                                    <li>#Banner</li>
+                                    <li>#自主制作</li>
+                                </ul>
+                                <h5 class="works-ja">
+                                    手話サークル fil様のロゴを作成しました。
+                                </h5>
+                            </div>
+                            <div class="btn btn-works">
+                                <a href="works-6.html" class="works-arrow">
+                                    <span class="view-more splittext">View more</span>
+                                    <span class="arrow">
+                                        <svg width="30" height="30" viewBox="0 0 60 60"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20 30h20 M38 28l4 2-4 2" stroke="#000" stroke-width="3"
+                                                fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </span>
+
+                                    <span class="line"></span>
+                                </a>
+                            </div>
+                        </div>
+                        <img class="works-svg" src="assets/images/works-06.svg" alt="" />
+                    </article>
+
+
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="footer" class="section section-contact">
+        <div class="footer-box">
+            <div class="contact-item">
+                <h2 class="contact-en">CONTACT</h2>
+                <a href="mailto:tu" class="contact-button" aria-label="メールで連絡する">
+                    <svg class="circle-icon" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                        <circle class="circle-bg" cx="30" cy="30" r="28" />
+                        <path class="contact-arrow" d="M20 30h20M38 28l2 2-2 2" />
+                    </svg>
+                </a>
+            </div>
+            <nav class="footer-nav">
+                <ul class="footer-list">
+                    <li class="footer-item"><a href="#top" aria-label="トップへ">TOP</a></li>
+                    <li class="footer-item">
+                        <a href="#about" aria-label="自己紹介セクションへ">ABOUT</a>
+                    </li>
+                    <li class="footer-item"><a href="#works" aria-label="制作物セクションへ">WORKS</a></li>
+                </ul>
+            </nav>
+            <p class="footer-name">© 2025 Ono Naoto</p>
+            <img class="contact-svg" src="assets/images/Contact.svg" alt="" />
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <!--自作のJS-->
+</body>
+
+</html>

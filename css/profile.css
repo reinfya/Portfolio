@@ -1,0 +1,430 @@
+@charset "utf-8";
+
+
+/* about */
+.section-about {
+    padding-top: 5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.svg {
+    position: absolute;
+    bottom: 0rem;
+    right: 2%;
+    z-index: -1;
+}
+
+.about-box {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    padding: 10rem 2rem;
+}
+
+
+
+.about-left img {
+    max-width: 250px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.about-kanji {
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 36px;
+    /* 112.5% */
+    letter-spacing: 4px;
+}
+
+.about-txt {
+    max-width: 432px;
+    padding-top: 6rem;
+}
+
+.about-right img {
+    max-width: 320px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+
+
+/* learning */
+.section-learning {
+    position: relative;
+
+}
+
+/* .learning-bg {
+    position: absolute;
+    width: 100%;
+    top: 0;
+
+    z-index: 0;
+} */
+
+.learning-box {
+    position: relative;
+    padding: 10rem 2rem 20rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10rem;
+
+    max-width: 1600px;
+    /* 最大幅を指定 */
+    width: 100%;
+    /* 画面幅に追従しつつ */
+    margin: 0 auto;
+    /* 中央寄せ */
+}
+
+
+
+
+.learning-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    gap: 3rem;
+
+}
+
+.learning-svg {
+    position: absolute;
+    top: -1rem;
+    right: 0;
+
+    max-height: 1050px;
+    width: auto;
+    z-index: 0;
+    pointer-events: none;
+    /* 必要ならクリック無効化 */
+}
+
+
+.learning-img {
+    position: absolute;
+    max-width: 200px;
+    height: auto;
+    top: 5%;
+}
+
+.learning-title {
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    /* 80% */
+    letter-spacing: 4px;
+}
+
+.learning-subtitle {
+    font-family: "Cormorant Garamond";
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 40px;
+    /* 80% */
+    letter-spacing: 3px;
+}
+
+.skills-list {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    font-size: 15px;
+}
+
+
+
+
+/* art */
+.section-art {
+
+    position: relative;
+    padding-block: 2rem;
+}
+
+.art-container {
+    position: relative;
+}
+
+.art-bg-mask {
+    position: absolute;
+
+    overflow: hidden;
+    display: inline-block;
+}
+
+.art-bg {
+    display: block;
+    width: 100%;
+    height: auto;
+    clip-path: circle(0% at 50% 50%);
+    transition: clip-path 1s ease-out;
+}
+
+
+.art-bg-mask.is-show .art-bg {
+    clip-path: inset(0 0% 0 0%);
+}
+
+
+.art-svg {
+    position: absolute;
+    bottom: 0rem;
+    left: 2%;
+    z-index: 0;
+    max-width: 820px;
+    height: auto;
+
+}
+
+.art-box {
+    display: flex;
+    justify-content: center;
+    gap: 8rem;
+    padding: 40rem 2rem 30rem 2rem;
+}
+
+
+.art-left {
+    overflow: hidden;
+    position: relative;
+}
+
+
+.art-img-wrap {
+    max-width: 400px;
+    /* 固定サイズ */
+    height: auto;
+    overflow: hidden;
+    /* 中の画像がはみ出ないように */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.art-title {
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 4px;
+    padding-block: 4rem;
+}
+
+.art-txt {
+    max-width: 382px;
+
+    line-height: 36px;
+    /* 200% */
+    letter-spacing: 0.9px;
+}
+
+.art-scroll {
+    overflow: hidden;
+    width: 100%;
+    height: 230px;
+    position: relative;
+    padding-bottom: 5rem;
+}
+
+.art-scroll-track {
+    display: flex;
+    width: max-content;
+    gap: 4px;
+    animation: scrollLeft 35s linear infinite;
+}
+
+.art-scroll-track img {
+    height: 230px;
+    flex-shrink: 0;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+
+@media screen and (max-width: 820px) {
+    .art-box {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .art-svg {
+        position: absolute;
+        bottom: 0rem;
+        left: 2%;
+        z-index: 0;
+        max-width: 100%;
+        height: auto;
+
+    }
+}
+
+
+
+/* interests */
+.section-interests {
+    position: relative;
+
+}
+
+.interests-bg {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: -1;
+}
+
+.movie-svg {
+    max-width: 820px;
+    width: 100%;
+
+    height: auto;
+    flex-shrink: 0;
+
+}
+
+.latte-svg {
+    max-width: 820px;
+    padding-top: 2rem;
+
+    height: auto;
+    flex-shrink: 0;
+}
+
+
+
+.interests-box {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    gap: 15rem;
+    padding-block: 20rem;
+}
+
+.interests-left {
+    max-width: 500px;
+    width: 50%;
+    height: auto;
+    flex-shrink: 0;
+    z-index: 1;
+
+}
+
+.interests-right {
+    max-width: 500px;
+}
+
+.interests-item {
+    display: flex;
+    max-width: 1600px;
+    gap: 8rem;
+    padding-inline: 2rem;
+    position: relative;
+
+}
+
+.interests-item2 {
+    display: flex;
+    max-width: 1600px;
+    gap: 8rem;
+    padding-inline: 2rem;
+    position: relative;
+
+}
+
+.interests-title {
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 36px;
+    /* 90% */
+    letter-spacing: 3.2px;
+    padding-bottom: 5rem;
+}
+
+.interests-img {
+    position: relative;
+    z-index: 1;
+}
+
+.latte1 {
+    max-width: 75%;
+    height: auto;
+
+}
+
+.latte2 {
+    max-width: 45%;
+    position: absolute;
+    right: 0;
+    bottom: -30%;
+}
+
+@media screen and (max-width: 820px) {
+    .interests-box {
+        gap: 15rem;
+        padding-block: 2rem;
+    }
+
+    .interests-left {
+        max-width: 100%;
+        width: 100%;
+
+        height: auto;
+        flex-shrink: 0;
+        z-index: 1;
+
+    }
+
+    .interests-item {
+        display: flex;
+        flex-direction: column;
+
+        gap: 8rem;
+        padding-inline: 2rem;
+        position: relative;
+
+    }
+
+    .movie-svg {
+        max-width: 100%;
+        height: auto;
+        flex-shrink: 0;
+    }
+
+    .latte-svg {
+        max-width: 100%;
+        padding-top: 2rem;
+        height: auto;
+        flex-shrink: 0;
+    }
+
+}
