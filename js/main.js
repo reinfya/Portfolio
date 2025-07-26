@@ -105,6 +105,56 @@ overlay.addEventListener('click', () => {
 });
 
 
+// header splittext
+
+
+
+gsap.registerPlugin(SplitText);
+
+const navLinks = document.querySelectorAll('.header-nav a');
+
+navLinks.forEach((link) => {
+  const split = new SplitText(link, { type: "chars" });
+  const chars = split.chars;
+
+  // 各リンクごとにアニメ状態フラグを持つ
+  let isAnimating = false;
+
+  // 初期状態（通常表示）
+  gsap.set(chars, { y: 0, opacity: 1 });
+
+  link.addEventListener("mouseenter", () => {
+    if (isAnimating) return;
+    isAnimating = true;
+
+    gsap.to(chars, {
+      y: -20,
+      opacity: 0,
+      duration: 0.3,
+      ease: "power1.in",
+      stagger: 0.03,
+      onComplete: () => {
+        gsap.set(chars, { y: 20, opacity: 0 });
+        gsap.to(chars, {
+          y: 0,
+          opacity: 1,
+          duration: 0.4,
+          ease: "power2.out",
+          stagger: 0.03,
+          onComplete: () => {
+            isAnimating = false;
+          }
+        });
+      }
+    });
+  });
+});
+
+
+
+
+
+
 
 
 

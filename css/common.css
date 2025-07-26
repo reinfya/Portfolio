@@ -96,13 +96,14 @@ p {
   width: 0;
   height: 1px;
   background: #fafafa;
+  mix-blend-mode: difference;
   /* 色は必要に応じて調整 */
   transition: width 1s ease;
 }
 
-body.invert .section-line {
+/* body.invert .section-line {
   background: #121214;
-}
+} */
 
 .section-box {
   max-width: 1600px;
@@ -161,6 +162,8 @@ body.invert .section-line {
   display: none;
 }
 
+
+
 /* ヘッダーを画面幅いっぱいに */
 #header {
   width: 100%;
@@ -217,6 +220,8 @@ body.invert .section-line {
   letter-spacing: 1.2px;
   text-transform: uppercase;
 }
+
+
 
 
 
