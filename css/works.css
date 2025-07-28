@@ -315,6 +315,7 @@
 
 
 @media screen and (max-width: 820px) {
+
   .detail-box {
     display: flex;
     flex-direction: column;
@@ -332,7 +333,7 @@
     font-size: 50px;
     font-style: normal;
     font-weight: 400;
-    line-height: 45px;
+    line-height: 50px;
     /* 100% */
     letter-spacing: 0.8px;
   }
