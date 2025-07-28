@@ -329,3 +329,85 @@ gsap.to(".art-bg", {
     toggleActions: "play none none reverse"
   }
 });
+
+
+// ローディング画面
+
+window.addEventListener("load", () => {
+  const letters = document.querySelectorAll('.loading-text-words');
+  const tl = gsap.timeline({ repeat: -1, repeatDelay: 0 });
+
+  letters.forEach((letter, i) => {
+    const delay = i * 0.15;
+
+    // フェードアップ
+    tl.to(letter, {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: "power1.inOut"
+    }, delay);
+
+    // フェードダウン（少し後）
+    tl.to(letter, {
+      opacity: 0.1,
+      y: 0,
+      duration: 0.6,
+      ease: "power1.inOut"
+    }, delay + 1.2);
+  });
+
+});
+
+
+
+window.addEventListener("load", () => {
+  const tl = gsap.timeline();
+
+  // 1. circleの線を一周描くアニメーション
+  tl.fromTo(
+    ".circle",
+    { strokeDashoffset: 2 * Math.PI * 45 },
+    { strokeDashoffset: 0, duration: 2, ease: "power2.out" }
+  );
+
+  // 2. loading-text と loading-section をフェードアウト
+  tl.to(
+    [".loading-text", ".loading-section"],
+    {
+      opacity: 0,
+      duration: 0.8,
+      ease: "power1.out",
+      delay: 0.3,
+    },
+    "+=0.3" // circleアニメ終了から少し待ってから開始
+  );
+
+  // 3. curtain を上にスライドして消す（カーテン開き）
+  tl.to(
+    ".curtain",
+    {
+      y: "-100%",
+      duration: 1,
+      ease: "power2.inOut",
+      onComplete: () => {
+        // 必要ならローディング終了後の処理をここに
+      },
+    },
+    "-=0.4" // loading-textフェードアウトの途中から開始（少し重ねる）
+  );
+});
+
+
+
+
+const tl = gsap.timeline();
+
+
+
+// 円の線を一周描くアニメーション
+tl.to(".circle-loader circle", {
+  duration: 2.5,
+  strokeDashoffset: 0,
+  ease: "power2.out",
+});

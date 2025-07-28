@@ -47,69 +47,125 @@
 
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 </head>
 
 <body>
   <!-- ✅ ローディング画面 -->
-  <div id="loader">
-    <div class="loader-inner">
-      <p>Loading...</p>
-      <!-- アニメーションやロゴもここに -->
-    </div>
-  </div>
-  <div id="main-content" style="display: none;"></div>
+  <!-- <div id="loader">
+        <div class="loader-inner">
+            <p>Loading...</p>
+            
+        </div>
+    </div> -->
+  <div id="main-content" style="display: none"></div>
   <header id="header">
 
-    <a href="index.html" class="header-logo">
-      <img src="assets/images/logo.png" alt="名前ロゴ">
-    </a>
+    <div>
+      <div class="header-box">
+        <a href="index.html" class="header-logo">
+          <img src="assets/images/logo-fv.png" alt="名前ロゴ" />
+        </a>
 
-    <div class="header-box">
 
-      <!-- ハンバーガーアイコン（SPのみ表示） -->
-      <button class="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+        <nav id="nav" class="header-nav">
+          <ul>
+            <li class="nav-list">
+              <a href="#top" aria-label="トップへ">TOP</a>
+            </li>
+            <li class="nav-list">
+              <a href="profile.html" aria-label="自己紹介セクションへ">ABOUT</a>
+            </li>
+            <li class="nav-list">
+              <a href="#works" aria-label="制作物セクションへ">WORKS</a>
+            </li>
+            <li class="nav-list">
+              <a href="#contact" aria-label="お問い合わせセクションへ">CONTACT</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header-sp">
 
-      <nav class="header-nav">
-        <ul>
-          <li class="nav-list"><a href="#top" aria-label="トップへ">Top</a></li>
-          <li class="nav-list"><a href="profile.html" aria-label="自己紹介セクションへ">About</a></li>
-          <li class="nav-list"><a href="index.html#works" aria-label="制作物セクションへ">Works</a></li>
-          <li class="nav-list"><a href="#contact" aria-label="お問い合わせセクションへ">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+          <!-- ハンバーガーアイコン（SPのみ表示） -->
+          <button class="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+        </div>
+
+
+      </div>
   </header>
+  <div class="menu-overlay">
+    <nav id="nav-sp" class="header-sp-nav">
+      <ul class="nav-wrapper">
+        <li class="nav-list">
+          <a href="index.html" aria-label="トップへ">TOP</a>
+        </li>
+        <li class="nav-list">
+          <a href="profile.html" aria-label="自己紹介セクションへ">ABOUT</a>
+        </li>
+        <li class="nav-list">
+          <a href="index.html#works" aria-label="制作物セクションへ">WORKS</a>
+        </li>
+        <li class="nav-list">
+          <a href="#contact" aria-label="お問い合わせセクションへ">CONTACT</a>
+        </li>
+      </ul>
+      <img class="menu-svg" src="assets/images/menu.svg" alt="menu">
+    </nav>
+  </div>
 
   <main class="main">
     <section id="detail" class="section section-detail">
       <div class="detail-box">
         <div class="detail-list">
-          <div class="detail-left">
-            <h1 class="detail-title">Generative AI <br>seminar Banner</h1>
-            <h2>SmartFlow様が主催するオンラインセミナーの販促バナー</h2>
+          <h1 class="detail-title">Vegetable sales
+            landing page</h1>
+          <div class="detail-subtitle">
+            <div class="subtitle-item">
+              <span>2025.2</span>
+              <span class="separator">|</span>
+            </div>
+            <div class="subtitle-item">野菜販売サイトスグ食べ様（スクール課題）</div>
+          </div>
+          <div class="detail-link">
+            <div class="btn btn-works">
+              <a href="https://github.com/reinfya/Famille-Dog-trimming-salon-" class="works-arrow">
+                <span class="view-more splittext">GITHUBを開く</span>
+                <span class="arrow">
+                  <svg width="30" height="30" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 30h20 M38 28l4 2-4 2" stroke="#000" stroke-width="3" fill="none" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </span>
+
+                <span class="line"></span>
+              </a>
+            </div>
+            <div class="btn btn-works">
+              <a href="https://reinfya.github.io/Famille-Dog-trimming-salon-/" class="works-arrow">
+                <span class="view-more splittext">サイトを開く</span>
+                <span class="arrow">
+                  <svg width="30" height="30" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 30h20 M38 28l4 2-4 2" stroke="#000" stroke-width="3" fill="none" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </span>
+
+                <span class="line"></span>
+              </a>
+            </div>
 
           </div>
 
-          <div class="detail-right">
-            <div class="schedule-item">
-              <p class="schedule-label">企画</p>
-              <p class="schedule-duration">1日</p>
-            </div>
 
-            <div class="schedule-item">
-              <p class="schedule-label">デザイン</p>
-              <p class="schedule-duration">8時間</p>
-            </div>
-
-          </div>
         </div>
 
         <div class="detail-img">
-          <img src="assets/images/works-img4.png" alt="Famille様サムネイル">
+          <img src="assets/images/works-img4.jpg" alt="Famille様サムネイル">
         </div>
       </div>
     </section>
@@ -118,22 +174,11 @@
       <div class="process-list">
         <article class="process-item">
           <div class="process-left">
-            <h3 class="process-ja">サイズ</h3>
-            <p class="process-en">Size</p>
-          </div>
-          <div class="process-right">
-            <p class="process-txt">1080px × 1080px</p>
-          </div>
-        </article>
-        <article class="process-item">
-          <div class="process-left">
             <h3 class="process-ja">ターゲット</h3>
             <p class="process-en">Target</p>
           </div>
           <div class="process-right">
-            <p class="process-txt">主に中小企業の管理職向け。（特に30～50代の課長・部長クラス）
-              業務が多忙で時間管理に課題があり、経営者から効率化を求められている立場。
-              デジタルツールに対する理解はあるが、活用に自信がない。</p>
+            <p class="process-txt">子育て世代の30～40代の共働き主婦中心。</p>
           </div>
         </article>
 
@@ -143,7 +188,7 @@
             <p class="process-en">Task</p>
           </div>
           <div class="process-right">
-            <p class="process-txt">生成AIという名前は知っているが、実際に業務に組み込むまで使い慣れていない人が多い。</p>
+            <p class="process-txt">ターゲットは忙しくてスーパーに行く時間がないが、子どもに安心して食べさせられる野菜を選びたい。</p>
           </div>
         </article>
 
@@ -153,7 +198,20 @@
             <p class="process-en">Goal</p>
           </div>
           <div class="process-right">
-            <p class="process-txt">ターゲットに向けてバナーを通して、セミナー参加を促す。また、セミナー参加を通じて生成AIを使った知識やノウハウを提供し、自社のサービスへとつなげる。</p>
+            <p class="process-txt">サイトを利用してもらい、野菜が手軽に届くことの価値を伝え、サービスの継続的な利用につなげる。</p>
+          </div>
+        </article>
+
+        <article class="process-item">
+          <div class="process-left">
+            <h3 class="process-ja">情報設計</h3>
+            <p class="process-en">Information</p>
+          </div>
+          <div class="process-right">
+            <p class="process-txt">子育て世代中心のため、スマホからでも手軽に利用できるように、スマホに最適化したウェブサイトを作成しました。
+              オーガニック野菜の特徴やこだわりを伝えた後、商品紹介で実際のセット内容を見せて、注文しやすくするように。初回限定のお試しセットを目立たせることで初回の購入のハードルを下げる工夫をしました。
+
+            </p>
           </div>
         </article>
 
@@ -163,32 +221,98 @@
             <p class="process-en">Design</p>
           </div>
           <div class="process-right">
-            <p class="process-txt">生成AIが持つ「革新性」を視覚的に伝えるとともに、ビジネスシーンへの導入ハードルを下げ、より身近に感じてもらえるよう意識してデザインしました。
-              ビジネスシーンに馴染むブルーのグラデーションに幾何学模様を合わせることで、信頼感と知的な印象をつけました。キャッチコピーにはホワイトとアクセントカラーとしてオレンジを使用し、前向きでエネルギッシュな雰囲気を加えました。文字情報には、日付のフォントをRobotoに変更することでより視認性を上げました。
+            <p class="process-txt">
+              緑とベージュといったナチュラルで家庭的な色味を中心にしながら、初回限定のボタンには赤を使い目立たせることで、まずは試してもらおうという行動につなげやすくしました。
+              お客様の声や実際の生産者の方を写真付きで紹介することで、子供が安心して食事をしている様子を見ていただき、購入者に安心して注文いただけるようにしました。
             </p>
-            <img src="assets/images/process-color4.png" alt="">
+            <img src="assets/images/process-color.png" alt="">
+
           </div>
         </article>
 
+        <article class="process-item">
+          <div class="process-left">
+            <h3 class="process-ja">制作範囲</h3>
+            <p class="process-en">Range</p>
+          </div>
+          <div class="process">
+            <div class="schedule-list">
+              <div class="schedule-item">
+                <p class="process-txt">企画</p>
+                <p class="process-txt">デザイン</p>
+                <p class="process-txt">コーディング</p>
 
+              </div>
+
+              <div class="schedule-item">
+                <p class="process-txt">14日</p>
+                <p class="process-txt">14日</p>
+                <p class="process-txt">14日</p>
+              </div>
+            </div>
+
+          </div>
+        </article>
+        <article class="process-item">
+          <div class="process-left">
+            <h3 class="process-ja">使用ツール</h3>
+            <p class="process-en">Software</p>
+          </div>
+          <div class="process-right">
+            <p class="process-txt">Figma / Photoshop / Illustrator / Clip Studio / VS Code</p>
+          </div>
+        </article>
+        <div class="btn btn-works">
+          <a href="https://reinfya.github.io/Famille-Dog-trimming-salon-/" class="works-arrow">
+            <span class="view-more splittext">サイトを開く</span>
+            <span class="arrow">
+              <svg width="30" height="30" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 30h20 M38 28l4 2-4 2" stroke="#000" stroke-width="3" fill="none" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+
+            <span class="line"></span>
+          </a>
+        </div>
 
       </div>
 
+      <div class="process-down">
+
+        <div class="process-site-img">
+          <img class="process-site-img1" src="assets/images/works1-pc.jpg" alt="">
+          <img class="process-site-img2" src="assets/images/works1-sp.jpg" alt="">
+        </div>
+      </div>
     </section>
     <section id="other" class="section section-other">
 
+      <div class="section-box section-box-other">
+        <h2 class="section-en">OTHER</h2>
+        <div class="section-line section-line-works"></div>
+        <p class="section-ja">別の作品</p>
+      </div>
       <div class="other-box">
-        <div class="section-box">
-          <h2 class="section-en">Other</h2>
-
-        </div>
-        <div class="swiper other-swiper">
+        <div class="swiper-container">
           <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="assets/images/works-img1.png" alt="作品1"></div>
-            <div class="swiper-slide"><img src="assets/images/works-img4.png" alt="作品2"></div>
-            <div class="swiper-slide"><img src="assets/images/works-img5.png" alt="作品3"></div>
+            <div class="swiper-slide"><a href="works-1.html"><img src="assets/images/works-img1.jpg" alt="作品1"></a>
+            </div>
+            <div class="swiper-slide"><a href="works-2.html"><img src="assets/images/works-img2.jpg" alt="作品2"></a>
+            </div>
+            <div class="swiper-slide"><a href="works-3.html"><img src="assets/images/works-img3.jpg" alt="作品3"></a>
+            </div>
+
+            <div class="swiper-slide"><a href="works-5.html"><img src="assets/images/works-img5.jpg" alt="作品5"></a>
+            </div>
+            <div class="swiper-slide"><a href="works-6.html"><img src="assets/images/works-img6.jpg" alt="作品6"></a>
+            </div>
+            <div class="swiper-slide"><a href="works-7.html"><img src="assets/images/works-img7.jpg" alt="作品7"></a>
+            </div>
+            <!-- 必要に応じてさらに追加 -->
           </div>
         </div>
+
 
         <!-- 独自のボタン -->
         <div class="custom-buttons">
@@ -240,9 +364,16 @@
 
 
 
+
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script src="js/main2.js"></script>
   <script src="js/main.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
 
 
 </body>

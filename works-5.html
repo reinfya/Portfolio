@@ -52,68 +52,88 @@
 
 <body>
     <!-- ✅ ローディング画面 -->
-    <div id="loader">
+    <!-- <div id="loader">
         <div class="loader-inner">
             <p>Loading...</p>
-            <!-- アニメーションやロゴもここに -->
+            
         </div>
-    </div>
-    <div id="main-content" style="display: none;"></div>
+    </div> -->
+    <div id="main-content" style="display: none"></div>
     <header id="header">
 
-        <a href="index.html" class="header-logo">
-            <img src="assets/images/logo.png" alt="名前ロゴ">
-        </a>
+        <div>
+            <div class="header-box">
+                <a href="index.html" class="header-logo">
+                    <img src="assets/images/logo-fv.png" alt="名前ロゴ" />
+                </a>
 
-        <div class="header-box">
 
-            <!-- ハンバーガーアイコン（SPのみ表示） -->
-            <button class="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+                <nav id="nav" class="header-nav">
+                    <ul>
+                        <li class="nav-list">
+                            <a href="#top" aria-label="トップへ">TOP</a>
+                        </li>
+                        <li class="nav-list">
+                            <a href="profile.html" aria-label="自己紹介セクションへ">ABOUT</a>
+                        </li>
+                        <li class="nav-list">
+                            <a href="#works" aria-label="制作物セクションへ">WORKS</a>
+                        </li>
+                        <li class="nav-list">
+                            <a href="#contact" aria-label="お問い合わせセクションへ">CONTACT</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="header-sp">
 
-            <nav class="header-nav">
-                <ul>
-                    <li class="nav-list"><a href="#top" aria-label="トップへ">Top</a></li>
-                    <li class="nav-list"><a href="profile.html" aria-label="自己紹介セクションへ">About</a></li>
-                    <li class="nav-list"><a href="index.html#works" aria-label="制作物セクションへ">Works</a></li>
-                    <li class="nav-list"><a href="#contact" aria-label="お問い合わせセクションへ">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+                    <!-- ハンバーガーアイコン（SPのみ表示） -->
+                    <button class="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                </div>
+
+
+            </div>
     </header>
+    <div class="menu-overlay">
+        <nav id="nav-sp" class="header-sp-nav">
+            <ul class="nav-wrapper">
+                <li class="nav-list">
+                    <a href="index.html" aria-label="トップへ">TOP</a>
+                </li>
+                <li class="nav-list">
+                    <a href="profile.html" aria-label="自己紹介セクションへ">ABOUT</a>
+                </li>
+                <li class="nav-list">
+                    <a href="index.html#works" aria-label="制作物セクションへ">WORKS</a>
+                </li>
+                <li class="nav-list">
+                    <a href="#contact" aria-label="お問い合わせセクションへ">CONTACT</a>
+                </li>
+            </ul>
+            <img class="menu-svg" src="assets/images/menu.svg" alt="menu">
+        </nav>
+    </div>
 
     <main class="main">
         <section id="detail" class="section section-detail">
             <div class="detail-box">
                 <div class="detail-list">
-                    <div class="detail-left">
-                        <h1 class="detail-title">Matcha Pancake
-                            <br>Promo Banner
-                        </h1>
-                        <h2>甘味処 雫屋様の期間限定商品<br>
-                            いちご抹茶ぱんけーきの販促バナー</h2>
-
-                    </div>
-
-                    <div class="detail-right">
-                        <div class="schedule-item">
-                            <p class="schedule-label">企画</p>
-                            <p class="schedule-duration">1日</p>
+                    <h1 class="detail-title">Famille Official Website</h1>
+                    <div class="detail-subtitle">
+                        <div class="subtitle-item">
+                            <span>2025.3</span>
+                            <span class="separator">|</span>
                         </div>
-
-                        <div class="schedule-item">
-                            <p class="schedule-label">デザイン</p>
-                            <p class="schedule-duration">8時間</p>
-                        </div>
-
+                        <div class="subtitle-item">手話サークルfil様（クライアントワーク）</div>
                     </div>
                 </div>
 
                 <div class="detail-img">
-                    <img src="assets/images/works-img5.png" alt="Famille様サムネイル">
+                    <img src="assets/images/works-img5.jpg" alt="fil様サムネイル">
                 </div>
             </div>
         </section>
@@ -135,8 +155,8 @@
                         <p class="process-en">Target</p>
                     </div>
                     <div class="process-right">
-                        <p class="process-txt">30代～50代女性仕事終わりにスイーツを食べるのがすき。
-                            出勤や退勤時間に電車でインスタグラムを見て、情報収集していることが多い。</p>
+                        <p class="process-txt">新入生歓迎会で入学してきた生徒に向けてサークルに興味をもってもらう。
+                            また、インスタをみた在校生。</p>
                     </div>
                 </article>
 
@@ -146,8 +166,8 @@
                         <p class="process-en">Task</p>
                     </div>
                     <div class="process-right">
-                        <p class="process-txt">夕方から客足が伸びにくい。
-                            スイーツ＝日中に楽しむものというイメージがあり、仕事帰りにもご褒美として楽しんでもらいたい。。</p>
+                        <p class="process-txt">現在ロゴが存在せず、自分たちの活動やコンセプトが伝わりにくい。
+                            多くのサークルが存在し、関心を持ってもらうことが難しい。</p>
                     </div>
                 </article>
 
@@ -158,7 +178,8 @@
                     </div>
                     <div class="process-right">
                         <p class="process-txt">
-                            バナーをクリックしてもらい、企業のインスタグラムへの誘導。またそこからの集客。</p>
+                            ロゴを見てどのような活動かが分かるようにする。
+                            また新入生に興味を持ってもらい、歓迎会に参加してもらう。</p>
                     </div>
                 </article>
 
@@ -168,11 +189,12 @@
                         <p class="process-en">Design</p>
                     </div>
                     <div class="process-right">
-                        <p class="process-txt">期間限定商品であることをパンケーキをモチーフにした和風のバナーロゴを作成し、
-                            和スイーツの魅力をアピールしました。<br><br>
-                            春の訪れを感じさせる季節感を大切にし、差し色にやわらかなピンクを取り入れることで、いちごの甘酸っぱさを引き立てました。背景には黒を用いることで主役である抹茶の深い緑と共に、全体に落ち着きと品のある印象をプラスし、忙しい日常の中でふと一息つけるようなリラックスした時間をイメージしていただけるようにしました。
-                        </p>
-                        <img src="assets/images/process-color5.png" alt="">
+                        <p class="process-txt">
+                            手話の手の形をモチーフに、手と手が糸でつながり、
+                            手話によって人の心がつながることを表現しました。
+                            単色で作成をお願いされていたので、どのような背景でも合うようにロゴの形は視認性を保ちつつ、
+                            糸の部分を文字で表現することで、一目でどのようなサークルかわかるようにしました。
+                            <img src="assets/images/process-color4.png" alt="">
                     </div>
                 </article>
 
