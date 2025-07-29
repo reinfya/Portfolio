@@ -303,6 +303,7 @@
 /* interests */
 .section-interests {
     position: relative;
+    padding-top: 4rem;
 
 }
 
@@ -338,7 +339,7 @@
 
     align-items: center;
     gap: 15rem;
-    padding-block: 20rem;
+    padding-block: 8rem;
 }
 
 .interests-left {

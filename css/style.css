@@ -32,7 +32,7 @@
 }
 
 .fv-name {
-  font-size: 45px;
+  font-size: 43px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -40,7 +40,11 @@
 }
 
 .fv-hosi {
-  width: 70px;
+  width: 60px;
+  margin: 3px 2px 3px 2px;
+  mix-blend-mode: color-dodge;
+
+
 }
 
 .fv-en {
@@ -185,9 +189,9 @@ body.invert .btn-about svg path {
     padding-inline: 2rem;
   }
 
-
-
-
+  .about-svg {
+    max-width: 100%;
+  }
 }
 
 
@@ -200,7 +204,33 @@ body.invert .btn-about svg path {
 
 /* works */
 
+/* 通常時：白 */
+.btn-works span {
+  color: #fafafa !important;
+}
 
+/* invert時：黒に戻す */
+body.invert .btn-works span {
+  color: #121214 !important;
+}
+
+/* 通常時：矢印も白 */
+.btn-works .line {
+  background-color: #fafafa !important;
+}
+
+.btn-works svg path {
+  stroke: #fafafa !important;
+}
+
+/* invert時：矢印を黒に戻す */
+body.invert .btn-works .line {
+  background-color: #121214 !important;
+}
+
+body.invert .btn-works svg path {
+  stroke: #121214 !important;
+}
 
 
 .works-box {
@@ -225,6 +255,25 @@ body.invert .btn-about svg path {
   flex-shrink: 0;
   padding-left: 2rem;
 }
+
+.work-thumb {
+  overflow: hidden;
+  display: inline-block;
+}
+
+.work-thumb img.works-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform-origin: center center;
+  /* 拡大の基準点 */
+}
+
+
+
+
+
+
 
 .works-right {
   display: flex;
@@ -267,6 +316,8 @@ body.invert .btn-about svg path {
   gap: 2rem;
 }
 
+
+
 .works-svg {
   position: absolute;
   right: 0;
@@ -274,6 +325,7 @@ body.invert .btn-about svg path {
   max-width: 35rem;
   height: auto;
   max-height: 20rem;
+
 }
 
 .view-more {
@@ -288,6 +340,7 @@ body.invert .btn-about svg path {
   overflow: hidden;
   margin-left: 1px;
   color: #121214;
+
 }
 
 .view-more span {

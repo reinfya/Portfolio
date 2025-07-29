@@ -262,23 +262,57 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
+// works-img hover
+
+document.querySelectorAll('.work-thumb').forEach((container) => {
+  const img = container.querySelector('img.works-img');
+
+  container.addEventListener('mouseenter', () => {
+    gsap.to(img, { scale: 1.1, duration: 0.3, ease: 'power1.out' });
+  });
+
+  container.addEventListener('mouseleave', () => {
+    gsap.to(img, { scale: 1, duration: 0.3, ease: 'power1.out' });
+  });
+});
+
+
+
+
+
+
+
+
+
 // 反転
-window.addEventListener("DOMContentLoaded", () => {
-  // ページ初期化で必ずリセット
+function setupScrollTrigger() {
+  const works = document.querySelector("#works");
+  if (!works) return;
+
+  // 初期状態はinvertなし
   document.body.classList.remove("invert");
 
-  // #works があるときだけ ScrollTrigger を有効化
-  if (document.querySelector("#works")) {
-    ScrollTrigger.create({
-      trigger: "#works",
-      start: "top 50%",
-      end: "bottom 10%",
-      onEnter: () => document.body.classList.add("invert"),
-      onLeaveBack: () => document.body.classList.remove("invert"),
-      markers: false,
-    });
-  }
-});
+  // works内にいる間invertをつけるトリガー
+  ScrollTrigger.create({
+    trigger: works,
+    start: "top 50%",
+    end: "bottom 40%",    // worksのbottomが画面上に来たら終了
+    onEnter: () => document.body.classList.add("invert"),
+    onLeave: () => document.body.classList.remove("invert"),
+    onEnterBack: () => document.body.classList.add("invert"),
+    onLeaveBack: () => document.body.classList.remove("invert"),
+    markers: false,
+  });
+
+  ScrollTrigger.refresh();
+}
+
+window.addEventListener("DOMContentLoaded", setupScrollTrigger);
+window.addEventListener("pageshow", setupScrollTrigger);
+
+
+
 
 
 // 反転profile
@@ -344,7 +378,7 @@ window.addEventListener("load", () => {
     tl.to(letter, {
       opacity: 1,
       y: 0,
-      duration: 0.8,
+      duration: 0.6,
       ease: "power1.inOut"
     }, delay);
 
@@ -352,62 +386,73 @@ window.addEventListener("load", () => {
     tl.to(letter, {
       opacity: 0.1,
       y: 0,
-      duration: 0.6,
+      duration: 0.4,
       ease: "power1.inOut"
-    }, delay + 1.2);
+    }, delay + 0.8);
   });
 
 });
 
 
 
-window.addEventListener("load", () => {
-  const tl = gsap.timeline();
-
-  // 1. circleの線を一周描くアニメーション
-  tl.fromTo(
-    ".circle",
-    { strokeDashoffset: 2 * Math.PI * 45 },
-    { strokeDashoffset: 0, duration: 2, ease: "power2.out" }
-  );
-
-  // 2. loading-text と loading-section をフェードアウト
-  tl.to(
-    [".loading-text", ".loading-section"],
-    {
-      opacity: 0,
-      duration: 0.8,
-      ease: "power1.out",
-      delay: 0.3,
-    },
-    "+=0.3" // circleアニメ終了から少し待ってから開始
-  );
-
-  // 3. curtain を上にスライドして消す（カーテン開き）
-  tl.to(
-    ".curtain",
-    {
-      y: "-100%",
-      duration: 1,
-      ease: "power2.inOut",
-      onComplete: () => {
-        // 必要ならローディング終了後の処理をここに
-      },
-    },
-    "-=0.4" // loading-textフェードアウトの途中から開始（少し重ねる）
-  );
-});
-
-
-
-
 const tl = gsap.timeline();
 
-
-
-// 円の線を一周描くアニメーション
+// loadingのアニメーション終了後にFVタイトル表示
 tl.to(".circle-loader circle", {
-  duration: 2.5,
+  duration: 3,
   strokeDashoffset: 0,
+  opacity: 0.8,
   ease: "power2.out",
-});
+})
+  .to(".loading-text, .loading-section", {
+    opacity: 0,
+    duration: 0.4,
+    ease: "power2.out"
+  })
+  .to(".curtain", {
+    y: "-100%",
+    duration: 0.7,
+    ease: "power2.inOut"
+  })
+  .set("#loading", { display: "none" }) // loadingエリア非表示に
+
+
+
+
+
+
+  // FVタイトル（左から順にふわっと）
+  .to(".fv-timeline-1", {
+    x: 0,
+    opacity: 1,
+    duration: 0.6,
+    ease: "power2.out"
+  }, "+=0.2")
+  .to(".fv-timeline-2", {
+    x: 0,
+    opacity: 1,
+    duration: 0.6,
+    ease: "power2.out"
+  }, "+=0.1")
+  .to(".fv-timeline-3", {
+    x: 0,
+    opacity: 1,
+    duration: 0.6,
+    ease: "power2.out"
+  }, "+=0.1");
+
+const splitEn = new SplitText(".fv-en", { type: "chars" });
+
+// 1文字ずつフェードインするアニメーションをタイムラインに追加
+tl.from(splitEn.chars, {
+  duration: 0.5,
+  opacity: 0,
+  y: 20,
+  stagger: 0.03,
+  ease: "power2.out"
+}, "-=0.4");  // 前のアニメーションの途中から重ねて開始
+
+
+
+
+
