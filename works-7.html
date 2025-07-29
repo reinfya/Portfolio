@@ -51,38 +51,44 @@
 </head>
 
 <body>
-    <!-- ✅ ローディング画面 -->
-    <div id="loader">
-        <div class="loader-inner">
-            <p>Loading...</p>
-            <!-- アニメーションやロゴもここに -->
-        </div>
-    </div>
-    <div id="main-content" style="display: none;"></div>
     <header id="header">
 
-        <a href="index.html" class="header-logo">
-            <img src="assets/images/logo.png" alt="名前ロゴ">
-        </a>
+        <div>
+            <div class="header-box">
+                <a href="index.html" class="header-logo">
+                    <img src="assets/images/logo-fv.png" alt="名前ロゴ" />
+                </a>
 
-        <div class="header-box">
 
-            <!-- ハンバーガーアイコン（SPのみ表示） -->
-            <button class="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+                <nav id="nav" class="header-nav">
+                    <ul>
+                        <li class="nav-list">
+                            <a href="index.html#top" aria-label="トップへ">TOP</a>
+                        </li>
+                        <li class="nav-list">
+                            <a href="profile.html" aria-label="自己紹介セクションへ">ABOUT</a>
+                        </li>
+                        <li class="nav-list">
+                            <a href="index.html#works" aria-label="制作物セクションへ">WORKS</a>
+                        </li>
+                        <li class="nav-list">
+                            <a href="#contact" aria-label="お問い合わせセクションへ">CONTACT</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="header-sp">
 
-            <nav class="header-nav">
-                <ul>
-                    <li class="nav-list"><a href="#top" aria-label="トップへ">Top</a></li>
-                    <li class="nav-list"><a href="profile.html" aria-label="自己紹介セクションへ">About</a></li>
-                    <li class="nav-list"><a href="index.html#works" aria-label="制作物セクションへ">Works</a></li>
-                    <li class="nav-list"><a href="#contact" aria-label="お問い合わせセクションへ">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+                    <!-- ハンバーガーアイコン（SPのみ表示） -->
+                    <button class="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                </div>
+
+
+            </div>
     </header>
 
     <main class="main">
@@ -90,30 +96,21 @@
             <div class="detail-box">
                 <div class="detail-list">
                     <div class="detail-left">
-                        <h1 class="detail-title">Matcha Pancake
-                            <br>Promo Banner
-                        </h1>
-                        <h2>甘味処 雫屋様の期間限定商品<br>
-                            いちご抹茶ぱんけーきの販促バナー</h2>
-
-                    </div>
-
-                    <div class="detail-right">
-                        <div class="schedule-item">
-                            <p class="schedule-label">企画</p>
-                            <p class="schedule-duration">1日</p>
-                        </div>
-
-                        <div class="schedule-item">
-                            <p class="schedule-label">デザイン</p>
-                            <p class="schedule-duration">8時間</p>
+                        <h1 class="detail-title">Matcha Pancake Promo Banner</h1>
+                        <div class="detail-subtitle">
+                            <div class="subtitle-item">
+                                <span>2025.5</span>
+                                <span class="separator">|</span>
+                            </div>
+                            <div class="subtitle-item">甘味処 雫屋様販促バナー（自主制作）</div>
                         </div>
 
                     </div>
+
                 </div>
 
                 <div class="detail-img">
-                    <img src="assets/images/works-img5.png" alt="Famille様サムネイル">
+                    <img src="assets/images/works-img7.jpg" alt="雫屋様サムネイル">
                 </div>
             </div>
         </section>
@@ -183,18 +180,31 @@
         </section>
         <section id="other" class="section section-other">
 
+            <div class="section-box section-box-other">
+                <h2 class="section-en">OTHER</h2>
+                <div class="section-line section-line-works"></div>
+                <p class="section-ja">別の作品</p>
+            </div>
             <div class="other-box">
-                <div class="section-box">
-                    <h2 class="section-en">Other</h2>
-
-                </div>
-                <div class="swiper other-swiper">
+                <div class="swiper-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="assets/images/works-img1.png" alt="作品1"></div>
-                        <div class="swiper-slide"><img src="assets/images/works-img4.png" alt="作品2"></div>
-                        <div class="swiper-slide"><img src="assets/images/works-img5.png" alt="作品3"></div>
+
+                        <div class="swiper-slide"><a href="works-2.html"><img src="assets/images/works-img2.jpg"
+                                    alt="作品2"></a></div>
+                        <div class="swiper-slide"><a href="works-3.html"><img src="assets/images/works-img3.jpg"
+                                    alt="作品3"></a></div>
+                        <div class="swiper-slide"><a href="works-4.html"><img src="assets/images/works-img4.jpg"
+                                    alt="作品4"></a></div>
+                        <div class="swiper-slide"><a href="works-5.html"><img src="assets/images/works-img5.jpg"
+                                    alt="作品5"></a></div>
+                        <div class="swiper-slide"><a href="works-6.html"><img src="assets/images/works-img6.jpg"
+                                    alt="作品6"></a></div>
+                        <div class="swiper-slide"><a href="works-7.html"><img src="assets/images/works-img7.jpg"
+                                    alt="作品7"></a></div>
+                        <!-- 必要に応じてさらに追加 -->
                     </div>
                 </div>
+
 
                 <!-- 独自のボタン -->
                 <div class="custom-buttons">
@@ -232,11 +242,11 @@
             </div>
             <nav class="footer-nav">
                 <ul class="footer-list">
-                    <li><a href="#top" aria-label="トップへ">TOP</a></li>
+                    <li><a href="index.html#top" aria-label="トップへ">TOP</a></li>
                     <li>
-                        <a href="#about" aria-label="自己紹介セクションへ">ABOUT</a>
+                        <a href="profile.html" aria-label="自己紹介セクションへ">ABOUT</a>
                     </li>
-                    <li><a href="#works" aria-label="制作物セクションへ">WORKS</a></li>
+                    <li><a href="index.html#works" aria-label="制作物セクションへ">WORKS</a></li>
                 </ul>
             </nav>
             <p class="footer-name">© 2025 Ono Naoto</p>
@@ -244,12 +254,14 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
 
+    <script src="js/main2.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
 

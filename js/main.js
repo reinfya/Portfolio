@@ -16,7 +16,7 @@ document.addEventListener("mousemove", (e) => {
   const dy = mouseY - btnCenterY;
   const distance = Math.sqrt(dx * dx + dy * dy);
 
-  if (distance < 150) {
+  if (distance < 130) {
     isHovering = true;
     gsap.to(button, {
       x: dx * 0.5,
@@ -219,6 +219,9 @@ document.addEventListener("DOMContentLoaded", function () {
   gsap.registerPlugin(ScrollTrigger);
 
   const images = document.querySelectorAll(".works-img");
+  let isScrolling = false;
+  let scrollTimeout;
+  let currentActiveImg = null;
 
   function updateImageScale() {
     let closestImg = null;
@@ -236,10 +239,12 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
+    currentActiveImg = closestImg;
+
     images.forEach((img) => {
       if (img === closestImg) {
         gsap.to(img, {
-          scale: 1.1,
+          scale: 1.05,
           opacity: 1,
           duration: 0.6,
           ease: "power2.out",
@@ -255,27 +260,38 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // スクロール時にチェック
-  window.addEventListener("scroll", updateImageScale);
+  function onScroll() {
+    isScrolling = true;
+    updateImageScale();
+
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      isScrolling = false;
+    }, 200);
+  }
+
+  window.addEventListener("scroll", onScroll);
   window.addEventListener("resize", updateImageScale);
   updateImageScale(); // 初期呼び出し
+
+  // works-img hover（スクロール中＆縮小状態のときは無効）
+  document.querySelectorAll('.work-thumb').forEach((container) => {
+    const img = container.querySelector('img.works-img');
+
+    container.addEventListener('mouseenter', () => {
+      if (!isScrolling && img === currentActiveImg) {
+        gsap.to(img, { scale: 1.2, duration: 0.3, ease: 'power1.out' });
+      }
+    });
+
+    container.addEventListener('mouseleave', () => {
+      if (!isScrolling && img === currentActiveImg) {
+        gsap.to(img, { scale: 1.1, duration: 0.3, ease: 'power1.out' });
+      }
+    });
+  });
 });
 
-
-
-// works-img hover
-
-document.querySelectorAll('.work-thumb').forEach((container) => {
-  const img = container.querySelector('img.works-img');
-
-  container.addEventListener('mouseenter', () => {
-    gsap.to(img, { scale: 1.1, duration: 0.3, ease: 'power1.out' });
-  });
-
-  container.addEventListener('mouseleave', () => {
-    gsap.to(img, { scale: 1, duration: 0.3, ease: 'power1.out' });
-  });
-});
 
 
 
@@ -297,7 +313,7 @@ function setupScrollTrigger() {
   ScrollTrigger.create({
     trigger: works,
     start: "top 50%",
-    end: "bottom 40%",    // worksのbottomが画面上に来たら終了
+    end: "bottom 10%",    // worksのbottomが画面上に来たら終了
     onEnter: () => document.body.classList.add("invert"),
     onLeave: () => document.body.classList.remove("invert"),
     onEnterBack: () => document.body.classList.add("invert"),

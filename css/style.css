@@ -24,7 +24,7 @@
 
 .fv-title {
   mix-blend-mode: color-dodge;
-  color: rgb(244, 250, 254);
+  color: #f4fafe;
   position: relative;
   z-index: 1;
 
@@ -237,7 +237,7 @@ body.invert .btn-works svg path {
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  padding: 2rem 2rem 20rem 2rem;
+  padding: 2rem 2rem 15rem 2rem;
 }
 
 
@@ -246,7 +246,7 @@ body.invert .btn-works svg path {
   display: flex;
   gap: 10rem;
   position: relative;
-  padding-block: 8rem;
+  padding: 6.5rem;
 }
 
 .works-left {
