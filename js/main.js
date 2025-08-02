@@ -280,13 +280,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     container.addEventListener('mouseenter', () => {
       if (!isScrolling && img === currentActiveImg) {
-        gsap.to(img, { scale: 1.2, duration: 0.3, ease: 'power1.out' });
+        gsap.to(img, { scale: 1.1, duration: 0.3, ease: 'power1.out' });
       }
     });
 
     container.addEventListener('mouseleave', () => {
       if (!isScrolling && img === currentActiveImg) {
-        gsap.to(img, { scale: 1.1, duration: 0.3, ease: 'power1.out' });
+        gsap.to(img, { scale: 1, duration: 0.3, ease: 'power1.out' });
       }
     });
   });

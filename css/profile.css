@@ -8,47 +8,64 @@
     overflow: hidden;
 }
 
-.svg {
-    position: absolute;
-    bottom: 0rem;
-    right: 2%;
-    z-index: -1;
-}
-
 .about-box {
     display: flex;
     justify-content: center;
-    gap: 3rem;
-    padding: 10rem 2rem;
+    gap: 8rem;
+    padding: 10rem 0 25rem 0;
+
+}
+
+.about-photo {
+    max-width: 300px;
+
+}
+
+.about-left {
+    position: relative;
+}
+
+.about-svg {
+    max-width: none;
+    max-width: 820px;
+    position: absolute;
+    display: block;
+    /* 追加 */
+    left: 0;
+    bottom: -13rem;
+    mix-blend-mode: difference;
+    z-index: -1;
 }
 
 
+.about-right {
+    max-width: 432px;
+}
 
-.about-left img {
-    max-width: 250px;
+
+.about-logo {
+    width: 300px;
     height: auto;
     flex-shrink: 0;
+    mix-blend-mode: difference;
 }
 
+
+
 .about-kanji {
-    font-size: 25px;
+    font-size: 24px;
     font-style: normal;
     font-weight: 600;
     line-height: 36px;
     /* 112.5% */
-    letter-spacing: 4px;
+    letter-spacing: 4.8px;
 }
 
 .about-txt {
     max-width: 432px;
-    padding-top: 6rem;
+    padding: 2rem 0 10rem 0;
 }
 
-.about-right img {
-    max-width: 320px;
-    height: auto;
-    flex-shrink: 0;
-}
 
 @media screen and (max-width: 820px) {
     .about-box {

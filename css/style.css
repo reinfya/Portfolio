@@ -94,10 +94,13 @@
 
 }
 
+.about-photo {
+  max-width: 300px;
+
+}
+
 .about-left {
   position: relative;
-  max-width: 432px;
-
 }
 
 .about-svg {
@@ -113,7 +116,7 @@
 }
 
 .about-logo {
-  width: 350px;
+  width: 300px;
   height: auto;
   flex-shrink: 0;
   mix-blend-mode: difference;
@@ -135,9 +138,7 @@
   padding: 2rem 0 10rem 0;
 }
 
-.about-right img {
-  max-width: 300px;
-}
+
 
 
 
@@ -172,7 +173,7 @@ body.invert .btn-about svg path {
 @media screen and (max-width: 820px) {
   .about-box {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
 
     gap: 5rem;
     padding: 10rem 0 25rem 0;
