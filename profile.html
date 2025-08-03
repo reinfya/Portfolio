@@ -47,14 +47,6 @@
 </head>
 
 <body>
-    <!-- ✅ ローディング画面 -->
-    <!-- <div id="loader">
-        <div class="loader-inner">
-            <p>Loading...</p>
-            
-        </div>
-    </div> -->
-    <div id="main-content" style="display: none"></div>
     <header id="header">
 
         <div>
@@ -67,7 +59,7 @@
                 <nav id="nav" class="header-nav">
                     <ul>
                         <li class="nav-list">
-                            <a href="index.html" aria-label="トップへ">TOP</a>
+                            <a href="index.html#top" aria-label="トップへ">TOP</a>
                         </li>
                         <li class="nav-list">
                             <a href="profile.html" aria-label="自己紹介セクションへ">ABOUT</a>
@@ -109,10 +101,20 @@
                 <li class="nav-list">
                     <a href="#contact" aria-label="お問い合わせセクションへ">CONTACT</a>
                 </li>
+                <li class="nav-list menu-logo">
+                    <a href="https://x.com/ash_simaena3" target="_blank" rel="noopener noreferrer">
+                        <img class="menu-logo-img" src="assets/images/logo-X.png" alt="Xロゴ">
+                    </a>
+                    <a href="https://github.com/reinfya" target="_blank" rel="noopener noreferrer">
+                        <img class="menu-logo-img" src="assets/images/logo-Git.png" alt="GitHubロゴ">
+                    </a>
+                </li>
             </ul>
+
             <img class="menu-svg" src="assets/images/menu.svg" alt="menu">
         </nav>
     </div>
+
 
     <main class="main">
         <section id="about" class="section section-about">
@@ -124,12 +126,12 @@
             <div class="about-box">
                 <div class="about-left">
                     <img class="about-photo" src="assets/images/profile-photo.jpg" alt="プロフィール写真">
-                    <img class="about-svg" src="assets/images/About.svg" alt="背景svg" />
+
                 </div>
 
                 <div class="about-right">
                     <img class="about-logo" src="assets/images/logo.png" alt="名前ロゴ">
-                    <h4 class="about-kanji">大野 直人</h4>
+                    <h3 class="about-kanji">大野 直人</h3>
                     <p class="about-txt">
                         前職ではカフェに勤務しながら、ラテアートを提供しておりました。
                         また、個人向けにイラスト制作も行っており、 一人一人の想いを形にすることに強いやりがいを感じてきました。
@@ -138,8 +140,7 @@
 
 
                 </div>
-
-
+                <img class="about-svg" src="assets/images/Profile.svg" alt="背景svg" />
             </div>
         </section>
 
@@ -155,7 +156,7 @@
 
 
                 <article class="learning-item">
-                    <h3 class="learning-title">記憶に残る体験を</h3>
+                    <h4 class="learning-title">記憶に残る体験を</h4>
                     <p class="learning-txt">
                         スクールでは、ツールの使い方を基礎から学び、デザインを「見せる」だけでなくユーザーの操作環境を考えながらUI/UXのバランスをとり、実装する重要性を知りました。
                         webデザイナーであるトレーナーの方から「なぜこの設計にしたのか」を常に問われた経験から、目的に沿った構造や動線を意識してデザインやコーディングする姿勢が身につきました。
@@ -166,7 +167,7 @@
 
                 <article class="learning-item">
                     <img class="learning-img" src="assets/images/learning-design.png" alt="">
-                    <h4 class="learning-subtitle">DESIGN</h4>
+                    <h5 class="learning-subtitle">DESIGN</h5>
                     <p class="learning-txt">
                         WEBサイト、バナー、ロゴの作成ができます。ターゲットに伝わるデザインを目標に、目的に応じたレイアウトや配色設計、フォント選びなどを意識したデザインを心がけています。
                         参考サイトを集めてデザインの傾向を分析し、ユーザーの目的や導線を意識した情報設計を学んでいます。
@@ -180,7 +181,7 @@
 
                 <article class="learning-item">
                     <img class="learning-img" src="assets/images/learning-coding.png" alt="">
-                    <h4 class="learning-subtitle">CODING</h4>
+                    <h5 class="learning-subtitle">CODING</h5>
                     <p class="learning-txt">
                         HTMLやCSSを用いてwebサイトの作成ができます。また、JavascriptやGSAPを使用した動きのあるサイトの作成も可能です。
                         レスポンシブ対応も行い、デザインを正確に再現することを心がけています。
@@ -216,21 +217,22 @@
             </div>
             <div class="art-container">
                 <div class="art-bg-mask">
-                    <img class="art-bg" src="assets/images/artwork-bg.png" alt="背景svg">
+                    <img class="art-bg pc" src="assets/images/artwork-bg.jpg" alt="背景svg">
+                    <img class="art-bg sp" src="assets/images/artwork-bg-sp.jpg" alt="背景svg-sp">
                 </div>
 
 
                 <div class="art-box">
                     <div class="art-left fadeup">
-                        <div class="art-img-wrap">
-                            <img class="art-img" src="assets/images/artwork-main.jpg" alt="イラストサンプル画像">
-                        </div>
+
+                        <img class="art-img" src="assets/images/artwork-main.jpg" alt="イラストサンプル画像">
+
                     </div>
 
 
 
                     <div class="art-right fadeup">
-                        <h3 class="art-title">目的に応じた表現</h3>
+                        <h4 class="art-title">目的に応じた表現</h4>
                         <p class="art-txt">
                             イラスト制作では、アイコンや服装デザイン等、さまざまなイラストをご依頼されました。
                             そのため新しいデジタルの技法を学んだり、参考資料を集めたりして表現の幅を増やす努力をしてきました。
@@ -277,7 +279,7 @@
 
                         <a href="https://youtu.be/QvNssSKW22o"> <img class="interests-movie"
                                 src="assets/images/interests-movie.jpg" alt=""></a>
-                        <img class="movie-svg" src="assets/images/movie.svg" alt="背景svg">
+
                     </div>
                     <div class="interests-right">
                         <h4 class="interests-title">動画編集</h4>
@@ -285,6 +287,20 @@
                             Adobe After effectsとPremiere proを使って、友人のゲームのプレイ集の紹介ムービーを作成しました。
                             新しいソフトに触れるのが好きで、TOPページのファーストビューもサイトにあうように、星空と流星を作成しました。
                         </p>
+                        <div class="btn btn-interests">
+                            <a href="https://youtu.be/QvNssSKW22o" class="works-arrow">
+                                <span class="view-more splittext">View movie</span>
+                                <span class="arrow">
+                                    <svg width="30" height="30" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M20 30h20 M38 28l4 2-4 2" stroke="#fbfbfb" stroke-width="3" fill="none"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </span>
+
+                                <span class="line"></span>
+                            </a>
+                        </div>
+                        <img class="movie-svg" src="assets/images/movie.svg" alt="背景svg">
                     </div>
 
                 </article>
@@ -295,7 +311,7 @@
                             <img class="latte2" src="assets/images/interests-latte2.jpg" alt="">
 
                         </div>
-                        <img class="latte-svg" src="assets/images/latte.svg" alt="背景svg">
+
                     </div>
                     <div class="interests-right">
                         <h4 class="interests-title">ラテアート</h4>
@@ -304,7 +320,7 @@
                             その空間がお客様にとって最高の体験になるように、目の前で仕上げるラテアートで記憶に残るひとときを演出していました。
                         </p>
                     </div>
-
+                    <img class="latte-svg" src="assets/images/latte.svg" alt="背景svg">
                 </article>
             </div>
         </section>
@@ -324,14 +340,22 @@
             </div>
             <nav class="footer-nav">
                 <ul class="footer-list">
-                    <li class="footer-item"><a href="#top" aria-label="トップへ">TOP</a></li>
+                    <li class="footer-item"><a href="index.html" aria-label="トップへ">TOP</a></li>
                     <li class="footer-item">
-                        <a href="#about" aria-label="自己紹介セクションへ">ABOUT</a>
+                        <a href="profile.html" aria-label="自己紹介セクションへ">ABOUT</a>
                     </li>
-                    <li class="footer-item"><a href="#works" aria-label="制作物セクションへ">WORKS</a></li>
+                    <li class="footer-item"><a href="index.html#works" aria-label="制作物セクションへ">WORKS</a></li>
                 </ul>
+                <div class="footer-logo">
+                    <div class="footer-logo-box">
+                        <img src="assets/images/logo-X.png" alt="">
+                        <img src="assets/images/logo-Git.png" alt="">
+                    </div>
+                    <p class="footer-name">© 2025 Ono Naoto</p>
+                </div>
             </nav>
-            <p class="footer-name">© 2025 Ono Naoto</p>
+
+
             <img class="contact-svg" src="assets/images/Contact.svg" alt="" />
         </div>
     </footer>

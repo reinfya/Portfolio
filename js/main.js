@@ -360,8 +360,8 @@ gsap.utils.toArray(".fadeup").forEach((el) => {
       ease: "power2.out",
       scrollTrigger: {
         trigger: el,
-        start: "top 60%",
-        toggleActions: "play none none reverse"
+        start: "top 55%",
+        toggleActions: "play none none none"
       }
     }
   );
@@ -415,7 +415,7 @@ const tl = gsap.timeline();
 
 // loadingのアニメーション終了後にFVタイトル表示
 tl.to(".circle-loader circle", {
-  duration: 3,
+  duration: 2.5,
   strokeDashoffset: 0,
   opacity: 0.8,
   ease: "power2.out",

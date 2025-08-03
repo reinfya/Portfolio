@@ -85,12 +85,18 @@
 
 /* about */
 
+.section-about {
+
+  position: relative;
+  overflow: hidden;
+}
 
 .about-box {
   display: flex;
   justify-content: center;
   gap: 8rem;
-  padding: 10rem 0 25rem 0;
+  padding: 10rem 0 12rem 0;
+  position: relative;
 
 }
 
@@ -99,9 +105,7 @@
 
 }
 
-.about-left {
-  position: relative;
-}
+
 
 .about-svg {
   max-width: none;
@@ -109,11 +113,18 @@
   position: absolute;
   display: block;
   /* 追加 */
-  left: 0;
-  bottom: -13rem;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
   mix-blend-mode: difference;
   z-index: -1;
 }
+
+
+.about-right {
+  max-width: 432px;
+}
+
 
 .about-logo {
   width: 300px;
@@ -174,24 +185,34 @@ body.invert .btn-about svg path {
   .about-box {
     display: flex;
     flex-direction: column;
-
-    gap: 5rem;
-    padding: 10rem 0 25rem 0;
-    position: relative;
+    justify-content: center;
+    gap: 3rem;
+    padding: 10rem 2rem;
   }
 
   .about-left {
     margin: 0 auto;
-    padding-inline: 2rem;
   }
 
   .about-right {
     margin: 0 auto;
-    padding-inline: 2rem;
+    max-width: 400px;
   }
 
   .about-svg {
-    max-width: 100%;
+    max-width: none;
+    max-width: 400px;
+    position: absolute;
+    display: block;
+    /* 追加 */
+
+    bottom: 3rem;
+    mix-blend-mode: difference;
+    z-index: -1;
+  }
+
+  .about-kanji {
+    font-size: 20px;
   }
 }
 
@@ -326,7 +347,6 @@ body.invert .btn-works svg path {
   max-width: 35rem;
   height: auto;
   max-height: 20rem;
-
 }
 
 .view-more {
