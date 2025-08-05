@@ -200,7 +200,7 @@ body.invert .btn-about svg path {
   }
 
   .about-svg {
-    max-width: none;
+
     max-width: 400px;
     position: absolute;
     display: block;

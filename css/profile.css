@@ -89,13 +89,11 @@
     }
 
     .about-svg {
-        max-width: none;
-        max-width: 350px;
+
+        max-width: 400px;
         position: absolute;
         display: block;
-        /* 追加 */
-        left: 0;
-        bottom: -13rem;
+        bottom: 10rem;
         mix-blend-mode: difference;
         z-index: -1;
     }
