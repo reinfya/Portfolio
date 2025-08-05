@@ -411,62 +411,74 @@ window.addEventListener("load", () => {
 
 
 
-const tl = gsap.timeline();
+// すでに訪問済みならアニメーションをスキップ
+if (localStorage.getItem("visited")) {
+  // ローディング非表示、FVタイトル表示だけにする
+  document.querySelector("#loading").style.display = "none";
+  document.querySelector(".curtain").style.transform = "translateY(-100%)";
+  gsap.set([".fv-timeline-1", ".fv-timeline-2", ".fv-timeline-3"], {
+    x: 0,
+    opacity: 1,
+  });
+  gsap.set(".fv-en", {
+    opacity: 1,
+  });
+} else {
+  // 初回訪問：タイムラインを再生
+  localStorage.setItem("visited", "true");
 
-// loadingのアニメーション終了後にFVタイトル表示
-tl.to(".circle-loader circle", {
-  duration: 2.5,
-  strokeDashoffset: 0,
-  opacity: 0.8,
-  ease: "power2.out",
-})
-  .to(".loading-text, .loading-section", {
+  const tl = gsap.timeline();
+
+  // loadingのアニメーション終了後にFVタイトル表示
+  tl.to(".circle-loader circle", {
+    duration: 2.5,
+    strokeDashoffset: 0,
+    opacity: 0.8,
+    ease: "power2.out",
+  })
+    .to(".loading-text, .loading-section", {
+      opacity: 0,
+      duration: 0.4,
+      ease: "power2.out"
+    })
+    .to(".curtain", {
+      y: "-100%",
+      duration: 0.7,
+      ease: "power2.inOut"
+    })
+    .set("#loading", { display: "none" }) // loadingエリア非表示に
+
+    // FVタイトル（左から順にふわっと）
+    .to(".fv-timeline-1", {
+      x: 0,
+      opacity: 1,
+      duration: 0.6,
+      ease: "power2.out"
+    }, "+=0.2")
+    .to(".fv-timeline-2", {
+      x: 0,
+      opacity: 1,
+      duration: 0.6,
+      ease: "power2.out"
+    }, "+=0.1")
+    .to(".fv-timeline-3", {
+      x: 0,
+      opacity: 1,
+      duration: 0.6,
+      ease: "power2.out"
+    }, "+=0.1");
+
+  const splitEn = new SplitText(".fv-en", { type: "chars" });
+
+  // 1文字ずつフェードイン
+  tl.from(splitEn.chars, {
+    duration: 0.5,
     opacity: 0,
-    duration: 0.4,
+    y: 20,
+    stagger: 0.03,
     ease: "power2.out"
-  })
-  .to(".curtain", {
-    y: "-100%",
-    duration: 0.7,
-    ease: "power2.inOut"
-  })
-  .set("#loading", { display: "none" }) // loadingエリア非表示に
-
-
-
-
-
-
-  // FVタイトル（左から順にふわっと）
-  .to(".fv-timeline-1", {
-    x: 0,
-    opacity: 1,
-    duration: 0.6,
-    ease: "power2.out"
-  }, "+=0.2")
-  .to(".fv-timeline-2", {
-    x: 0,
-    opacity: 1,
-    duration: 0.6,
-    ease: "power2.out"
-  }, "+=0.1")
-  .to(".fv-timeline-3", {
-    x: 0,
-    opacity: 1,
-    duration: 0.6,
-    ease: "power2.out"
-  }, "+=0.1");
-
-const splitEn = new SplitText(".fv-en", { type: "chars" });
-
-// 1文字ずつフェードインするアニメーションをタイムラインに追加
-tl.from(splitEn.chars, {
-  duration: 0.5,
-  opacity: 0,
-  y: 20,
-  stagger: 0.03,
-  ease: "power2.out"
-}, "-=0.4");  // 前のアニメーションの途中から重ねて開始
+  }, "-=0.4");
+}
 
 
 

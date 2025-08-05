@@ -244,13 +244,19 @@
 
 .art-container {
     position: relative;
+    display: flex;
+    margin: 0 auto;
+
+    justify-content: center;
 }
 
 .art-bg-mask {
     position: absolute;
-
     overflow: hidden;
-    display: inline-block;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
 }
 
 .art-bg {
@@ -259,6 +265,7 @@
     height: auto;
     clip-path: circle(0% at 50% 50%);
     transition: clip-path 1s ease-out;
+
 }
 
 
@@ -298,6 +305,7 @@
     height: auto;
     overflow: hidden;
     /* 中の画像がはみ出ないように */
+
 }
 
 
@@ -320,13 +328,11 @@
 
 }
 
-
-
-
-
-
-
-
+.art-right {
+    mix-blend-mode: difference;
+    z-index: 10;
+    color: #fbfbfb;
+}
 
 
 
@@ -337,6 +343,8 @@
     line-height: normal;
     letter-spacing: 4px;
     padding-block: 4rem;
+
+
 }
 
 .art-txt {
