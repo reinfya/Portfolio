@@ -381,6 +381,7 @@ gsap.to(".art-bg", {
 });
 
 
+
 // ローディング画面
 
 window.addEventListener("load", () => {
@@ -388,97 +389,85 @@ window.addEventListener("load", () => {
   const tl = gsap.timeline({ repeat: -1, repeatDelay: 0 });
 
   letters.forEach((letter, i) => {
-    const delay = i * 0.15;
+    const delay = i * 0.1;
 
     // フェードアップ
     tl.to(letter, {
       opacity: 1,
       y: 0,
-      duration: 0.6,
+      duration: 0.5,
       ease: "power1.inOut"
     }, delay);
 
     // フェードダウン（少し後）
     tl.to(letter, {
-      opacity: 0.1,
+      opacity: 0.3,
       y: 0,
-      duration: 0.4,
+      duration: 0.2,
       ease: "power1.inOut"
-    }, delay + 0.8);
+    }, delay + 0.5);
   });
 
 });
 
 
 
-// すでに訪問済みならアニメーションをスキップ
-if (localStorage.getItem("visited")) {
-  // ローディング非表示、FVタイトル表示だけにする
-  document.querySelector("#loading").style.display = "none";
-  document.querySelector(".curtain").style.transform = "translateY(-100%)";
-  gsap.set([".fv-timeline-1", ".fv-timeline-2", ".fv-timeline-3"], {
+const tl = gsap.timeline();
+
+// loadingのアニメーション終了後にFVタイトル表示
+tl.to(".circle-loader circle", {
+  duration: 1.2,
+  strokeDashoffset: 0,
+  opacity: 0.25,
+  ease: "power2.out",
+})
+  .to(".loading-text, .loading-section", {
+    opacity: 0,
+    duration: 0.6,
+    ease: "power2.out"
+  })
+  .to(".curtain", {
+    y: "-100%",
+    duration: 0.6,
+    ease: "power2.inOut"
+  }, "<")
+  .set("#loading", { display: "none" }) // loadingエリア非表示に
+
+
+
+
+
+
+  // FVタイトル（左から順にふわっと）
+  .to(".fv-timeline-1", {
     x: 0,
     opacity: 1,
-  });
-  gsap.set(".fv-en", {
-    opacity: 1,
-  });
-} else {
-  // 初回訪問：タイムラインを再生
-  localStorage.setItem("visited", "true");
-
-  const tl = gsap.timeline();
-
-  // loadingのアニメーション終了後にFVタイトル表示
-  tl.to(".circle-loader circle", {
-    duration: 2.5,
-    strokeDashoffset: 0,
-    opacity: 0.8,
-    ease: "power2.out",
-  })
-    .to(".loading-text, .loading-section", {
-      opacity: 0,
-      duration: 0.4,
-      ease: "power2.out"
-    })
-    .to(".curtain", {
-      y: "-100%",
-      duration: 0.7,
-      ease: "power2.inOut"
-    })
-    .set("#loading", { display: "none" }) // loadingエリア非表示に
-
-    // FVタイトル（左から順にふわっと）
-    .to(".fv-timeline-1", {
-      x: 0,
-      opacity: 1,
-      duration: 0.6,
-      ease: "power2.out"
-    }, "+=0.2")
-    .to(".fv-timeline-2", {
-      x: 0,
-      opacity: 1,
-      duration: 0.6,
-      ease: "power2.out"
-    }, "+=0.1")
-    .to(".fv-timeline-3", {
-      x: 0,
-      opacity: 1,
-      duration: 0.6,
-      ease: "power2.out"
-    }, "+=0.1");
-
-  const splitEn = new SplitText(".fv-en", { type: "chars" });
-
-  // 1文字ずつフェードイン
-  tl.from(splitEn.chars, {
-    duration: 0.5,
-    opacity: 0,
-    y: 20,
-    stagger: 0.03,
+    duration: 0.6,
     ease: "power2.out"
-  }, "-=0.4");
-}
+  }, "+=0.1")
+  .to(".fv-timeline-2", {
+    x: 0,
+    opacity: 1,
+    duration: 0.6,
+    ease: "power2.out"
+  }, "+=0.1")
+  .to(".fv-timeline-3", {
+    x: 0,
+    opacity: 1,
+    duration: 0.6,
+    ease: "power2.out"
+  }, "+=0.1");
+
+const splitEn = new SplitText(".fv-en", { type: "chars" });
+
+// 1文字ずつフェードインするアニメーションをタイムラインに追加
+tl.from(splitEn.chars, {
+  duration: 0.5,
+  opacity: 0,
+  y: 20,
+  stagger: 0.03,
+  ease: "power2.out"
+}, "-=0.4");  // 前のアニメーションの途中から重ねて開始
 
 
 
@@ -505,4 +494,71 @@ gsap.utils.toArray(".fade").forEach((el) => {
       },
     }
   );
+});
+
+
+
+
+// GSAP + ScrollTrigger 使用
+document.addEventListener("DOMContentLoaded", () => {
+  const stalker = document.querySelector(".mouse-stalker");
+  let pos = { x: 0, y: 0, scale: 1 };
+
+  // マウス追従
+  window.addEventListener("mousemove", (e) => {
+    pos.x = e.clientX;
+    pos.y = e.clientY;
+
+    // ストーカー移動・拡大縮小
+    gsap.to(stalker, {
+      x: pos.x,
+      y: pos.y,
+      scale: pos.scale,
+      duration: 0.2,
+      ease: "power2.out",
+      overwrite: "auto",
+    });
+
+    // パーティクル生成
+    createParticle(pos.x, pos.y);
+  });
+
+  // リンクホバーで拡大
+  document.querySelectorAll("a").forEach((el) => {
+    el.addEventListener("mouseenter", () => {
+      pos.scale = 3.5;
+      gsap.to(stalker, { scale: 3.5, duration: 1.0, ease: "power2.out" });
+    });
+    el.addEventListener("mouseleave", () => {
+      pos.scale = 1;
+      gsap.to(stalker, { scale: 1, duration: 1.0, ease: "power2.out" });
+    });
+  });
+
+
+  // パーティクル生成関数
+  function createParticle(x, y) {
+    const particle = document.createElement("div");
+    particle.classList.add("particle");
+    document.body.appendChild(particle);
+
+    // 初期位置をマウス位置に
+    particle.style.left = `${x}px`;
+    particle.style.top = `${y}px`;
+
+    // 少しランダムに動かしてフェードアウト
+    const offsetX = (Math.random() - 0.5) * 40; // 左右に最大±20px
+    const offsetY = (Math.random() - 0.5) * 40; // 上下に最大±20px
+
+    // アニメーション開始
+    requestAnimationFrame(() => {
+      particle.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(0.5)`;
+      particle.style.opacity = "0";
+    });
+
+    // 1秒後に要素を削除
+    setTimeout(() => {
+      particle.remove();
+    }, 2000);
+  }
 });

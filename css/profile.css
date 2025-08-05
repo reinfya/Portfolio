@@ -56,17 +56,18 @@
 
 
 .about-kanji {
-    font-size: 24px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 600;
     line-height: 36px;
     /* 112.5% */
-    letter-spacing: 4.8px;
+    letter-spacing: 2px;
+    padding-block: 1rem;
 }
 
 .about-txt {
     max-width: 432px;
-    padding: 2rem 0 10rem 0;
+    padding: 0 0 10rem 0;
 }
 
 
