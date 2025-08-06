@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const swiper = new Swiper('.swiper-container', {
         loop: true,
-        spaceBetween: 20,
+        spaceBetween: 9,
         breakpoints: {
             // 820px以上のとき（PC）
             821: {
