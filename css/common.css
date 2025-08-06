@@ -316,38 +316,65 @@ p {
 
 
 
+@media screen and (min-width: 819px) {
+  .mouse-stalker {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    pointer-events: none;
+    background: rgba(14, 7, 109, 0.5);
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: overlay;
+    /* 円形の枠を作る */
+    box-shadow: 0 0 20px 16px rgb(255, 255, 255);
+  }
 
-.mouse-stalker {
+  .particle {
+    position: fixed;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgb(194, 192, 228);
+    pointer-events: none;
+    z-index: 9998;
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    transition: transform 1.2s linear, opacity 1.2s ease-out;
+
+    mix-blend-mode: color-dodge;
+  }
+
+  body {
+    cursor: url("../assets/images/circle.png") 5 5, auto;
+  }
+
+  a:hover,
+  button:hover,
+  input[type="button"]:hover,
+  input[type="submit"]:hover {
+    cursor: url("../assets/images/circle-large.png") 8 8, auto;
+  }
+}
+
+
+/* .custom-cursor {
   position: fixed;
   top: 0;
   left: 0;
-  width: 40px;
-  height: 40px;
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   pointer-events: none;
-  background: transparent;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease;
   z-index: 9999;
-  transform: translate(-50%, -50%);
-  mix-blend-mode: overlay;
-  /* 円形の枠を作る */
-  box-shadow: 0 0 10px 2px rgba(255, 255, 255);
-}
-
-.particle {
-  position: fixed;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: rgb(255, 255, 255, 0.5);
-  pointer-events: none;
-  z-index: 9998;
-  opacity: 1;
-  transform: translate(-50%, -50%);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   mix-blend-mode: difference;
-}
-
-
+} */
 
 
 

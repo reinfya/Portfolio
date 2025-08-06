@@ -416,10 +416,10 @@ const tl = gsap.timeline();
 
 // loadingのアニメーション終了後にFVタイトル表示
 tl.to(".circle-loader circle", {
-  duration: 1.2,
+  duration: 1,
   strokeDashoffset: 0,
   opacity: 0.25,
-  ease: "power2.out",
+  ease: "power3.out",
 })
   .to(".loading-text, .loading-section", {
     opacity: 0,
@@ -444,19 +444,19 @@ tl.to(".circle-loader circle", {
     opacity: 1,
     duration: 0.6,
     ease: "power2.out"
-  }, "+=0.1")
+  }, "+=0.2")
   .to(".fv-timeline-2", {
     x: 0,
     opacity: 1,
     duration: 0.6,
     ease: "power2.out"
-  }, "+=0.1")
+  }, "+=0.2")
   .to(".fv-timeline-3", {
     x: 0,
     opacity: 1,
     duration: 0.6,
     ease: "power2.out"
-  }, "+=0.1");
+  }, "+=0.2");
 
 const splitEn = new SplitText(".fv-en", { type: "chars" });
 
@@ -499,10 +499,13 @@ gsap.utils.toArray(".fade").forEach((el) => {
 
 
 
-// GSAP + ScrollTrigger 使用
+// マウスストーカー
 document.addEventListener("DOMContentLoaded", () => {
   const stalker = document.querySelector(".mouse-stalker");
   let pos = { x: 0, y: 0, scale: 1 };
+
+  let lastParticleTime = 0;
+  const particleInterval = 40; // ミリ秒単位（40ms = 25個/秒）
 
   // マウス追従
   window.addEventListener("mousemove", (e) => {
@@ -514,7 +517,7 @@ document.addEventListener("DOMContentLoaded", () => {
       x: pos.x,
       y: pos.y,
       scale: pos.scale,
-      duration: 0.2,
+      duration: 0.1,
       ease: "power2.out",
       overwrite: "auto",
     });
@@ -547,8 +550,11 @@ document.addEventListener("DOMContentLoaded", () => {
     particle.style.top = `${y}px`;
 
     // 少しランダムに動かしてフェードアウト
-    const offsetX = (Math.random() - 0.5) * 40; // 左右に最大±20px
-    const offsetY = (Math.random() - 0.5) * 40; // 上下に最大±20px
+    const angle = Math.random() * Math.PI / 3 - Math.PI / 6; // -30°〜+30°
+    const speed = 100; // 移動距離
+
+    const offsetX = Math.cos(angle) * speed;
+    const offsetY = Math.sin(angle) * speed;
 
     // アニメーション開始
     requestAnimationFrame(() => {
@@ -559,6 +565,15 @@ document.addEventListener("DOMContentLoaded", () => {
     // 1秒後に要素を削除
     setTimeout(() => {
       particle.remove();
-    }, 2000);
+    }, 1000);
   }
+});
+
+const cursor = document.querySelector('.custom-cursor');
+
+document.addEventListener('mousemove', (e) => {
+  const x = e.clientX;
+  const y = e.clientY;
+  cursor.style.left = `${x}px`;
+  cursor.style.top = `${y}px`;
 });

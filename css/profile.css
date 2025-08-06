@@ -350,7 +350,7 @@
 
 .art-txt {
     max-width: 380px;
-
+    font-weight: 300;
     line-height: 36px;
     /* 200% */
     letter-spacing: 0.9px;
