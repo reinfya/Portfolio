@@ -100,11 +100,10 @@ p {
   mix-blend-mode: difference;
   /* 色は必要に応じて調整 */
   transition: width 1s ease;
+  z-index: 10;
 }
 
-/* body.invert .section-line {
-  background: #121214;
-} */
+
 
 .section-box {
   max-width: 1600px;
@@ -200,7 +199,7 @@ p {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: radial-gradient(circle, #2a2a2c 0%, #121214 70%);
   mix-blend-mode: difference;
   z-index: 1000;
@@ -235,6 +234,10 @@ p {
 
 
 .loading-section {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 40%;
   height: auto;
 }
@@ -245,6 +248,7 @@ p {
 }
 
 .circle-loader {
+
   transform: rotate(-90deg);
   width: 50%;
   /* デフォルトサイズ */
@@ -307,12 +311,18 @@ p {
   }
 
   .loading-section {
-    width: 100%;
+    width: 50vh;
     height: auto;
 
   }
 
-
+  .circle-loader {
+    transform: rotate(-90deg);
+    width: 50%;
+    /* デフォルトサイズ */
+    height: auto;
+    /* 頂点スタート */
+  }
 
 
 }

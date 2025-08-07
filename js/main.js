@@ -302,24 +302,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // 反転
-function setupScrollTrigger() {
-  const works = document.querySelector("#works");
-  if (!works) return;
+function createInvertTrigger(selector, start = "top 50%", end = "bottom 10%") {
+  const target = document.querySelector(selector);
+  if (!target) return;
 
-  // 初期状態はinvertなし
-  document.body.classList.remove("invert");
-
-  // works内にいる間invertをつけるトリガー
   ScrollTrigger.create({
-    trigger: works,
-    start: "top 50%",
-    end: "bottom 10%",    // worksのbottomが画面上に来たら終了
+    trigger: target,
+    start,
+    end,
     onEnter: () => document.body.classList.add("invert"),
     onLeave: () => document.body.classList.remove("invert"),
     onEnterBack: () => document.body.classList.add("invert"),
     onLeaveBack: () => document.body.classList.remove("invert"),
     markers: false,
   });
+}
+
+function setupScrollTrigger() {
+  document.body.classList.remove("invert");
+
+  createInvertTrigger("#works", "top 50%", "bottom 10%");
+  createInvertTrigger("#art", "top 50%", "bottom 40%");
 
   ScrollTrigger.refresh();
 }
@@ -327,21 +330,6 @@ function setupScrollTrigger() {
 window.addEventListener("DOMContentLoaded", setupScrollTrigger);
 window.addEventListener("pageshow", setupScrollTrigger);
 
-
-
-
-
-// 反転profile
-ScrollTrigger.create({
-  trigger: "#art",
-  start: "top 50%",
-  end: "bottom 40%",
-  onEnter: () => document.body.classList.add("invert"),
-  onEnterBack: () => document.body.classList.add("invert"), // 上に戻ったときも追加
-  onLeave: () => document.body.classList.remove("invert"),
-  onLeaveBack: () => document.body.classList.remove("invert"),
-  markers: false, // true にすればデバッグ可
-});
 
 
 
