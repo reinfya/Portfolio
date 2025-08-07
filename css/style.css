@@ -480,10 +480,10 @@ body.invert .btn-works svg path {
   }
 
   .works-left {
-    max-width: 600px;
+
     width: 100%;
     flex-shrink: 0;
-    padding-inline: 2rem;
+    padding-inline: 0rem;
 
   }
 
@@ -522,7 +522,7 @@ body.invert .btn-works svg path {
     position: absolute;
     right: 0;
     bottom: 72px;
-    max-width: 26rem;
+    max-width: 24rem;
 
   }
 

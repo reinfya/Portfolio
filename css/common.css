@@ -307,9 +307,12 @@ p {
   }
 
   .loading-section {
-    width: 70%;
+    width: 100%;
     height: auto;
+
   }
+
+
 
 
 }
