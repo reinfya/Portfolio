@@ -77,7 +77,7 @@
         flex-direction: column;
         justify-content: center;
         gap: 3rem;
-        padding: 10rem 2rem;
+        padding: 4rem 2rem;
     }
 
     .about-left {
@@ -91,7 +91,7 @@
 
     .about-svg {
 
-        max-width: 400px;
+        max-width: 80%;
         position: absolute;
         display: block;
         bottom: 10rem;
@@ -159,9 +159,9 @@
 
 .learning-img {
     position: absolute;
-    max-width: 200px;
-    height: auto;
-    top: 5%;
+    max-height: 150px;
+    width: auto;
+    top: 3rem;
     mix-blend-mode: difference;
 }
 
@@ -171,29 +171,50 @@
     font-weight: 700;
     line-height: 40px;
     /* 80% */
-    letter-spacing: 4px;
+    letter-spacing: 3.5px;
 }
 
 .learning-subtitle {
     font-family: "Cormorant Garamond";
-    font-size: 35px;
+    font-size: 40px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 40px;
     /* 80% */
     letter-spacing: 3px;
+    z-index: 1;
 }
+
+.skills-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+
 
 .skills-list {
     list-style: none;
     display: flex;
-    gap: 2rem;
-    font-size: 15px;
+
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 30px;
 }
 
 @media screen and (max-width: 820px) {
+    .learning-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 6rem;
+        padding: 5rem 2rem;
+    }
+
     .learning-title {
-        font-size: 30px;
+        font-size: 32px;
         font-style: normal;
         font-weight: 700;
         line-height: 40px;
@@ -203,9 +224,9 @@
 
     .learning-subtitle {
         font-family: "Cormorant Garamond";
-        font-size: 30px;
+        font-size: 35px;
         font-style: normal;
-        font-weight: 600;
+        font-weight: 700;
         line-height: 40px;
         /* 80% */
         letter-spacing: 2px;
@@ -213,10 +234,8 @@
 
     .learning-img {
         position: absolute;
-        max-width: 150px;
-        height: auto;
-        top: 5%;
-        mix-blend-mode: difference;
+        max-height: 130px;
+
     }
 
     .learning-svg {
@@ -224,12 +243,22 @@
         top: -1rem;
         right: 0;
 
-        max-height: 800px;
+        max-height: 500px;
         width: auto;
         z-index: 0;
         pointer-events: none;
         mix-blend-mode: difference;
         /* 必要ならクリック無効化 */
+    }
+
+    .skills-list {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        line-height: 30px;
     }
 }
 
@@ -344,8 +373,6 @@
     line-height: normal;
     letter-spacing: 4px;
     padding-block: 4rem;
-
-
 }
 
 .art-txt {
@@ -367,14 +394,13 @@
 .art-scroll-track {
     display: flex;
     width: max-content;
-    gap: 4px;
-    animation: scrollLeft 35s linear infinite;
+    gap: 2.5rem;
+    animation: scrollLeft 50s linear infinite;
 }
 
 .art-scroll-track img {
     height: 230px;
     flex-shrink: 0;
-    margin-right: 20px;
     object-fit: cover;
 }
 
@@ -652,7 +678,11 @@
     line-height: 36px;
     /* 90% */
     letter-spacing: 3.2px;
-    padding-bottom: 5rem;
+    padding-bottom: 2rem;
+}
+
+.interests-txt {
+    padding-top: 3rem;
 }
 
 .interests-img {
@@ -674,6 +704,11 @@
 }
 
 @media screen and (max-width: 820px) {
+
+    .section-interests {
+        padding-bottom: 5rem;
+    }
+
     .interests-box {
         gap: 15rem;
         padding-block: 2rem;
