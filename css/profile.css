@@ -395,7 +395,7 @@
     display: flex;
     width: max-content;
     gap: 2.5rem;
-    animation: scrollLeft 50s linear infinite;
+    animation: scrollLeft 60s linear infinite;
 }
 
 .art-scroll-track img {
@@ -452,6 +452,19 @@
 
     .art-img {
         max-width: 300px;
+    }
+
+    .art-scroll-track {
+        display: flex;
+        width: max-content;
+        gap: 1rem;
+        animation: scrollLeft 60s linear infinite;
+    }
+
+    .art-scroll-track img {
+        height: 180px;
+        flex-shrink: 0;
+        object-fit: cover;
     }
 
 }
