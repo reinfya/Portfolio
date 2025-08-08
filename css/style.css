@@ -40,8 +40,8 @@
 }
 
 .fv-hosi {
-  width: 60px;
-  margin: 3px 2px 3px 2px;
+  width: 56px;
+  margin: 2px 3px 3px 2px;
   mix-blend-mode: color-dodge;
 
 
@@ -69,7 +69,7 @@
   }
 
   .fv-hosi {
-    width: 35px;
+    width: 32px;
   }
 
   .fv-en {
@@ -518,6 +518,8 @@ body.invert .btn-works svg path {
 
   .works-hashtag {
     font-size: 14px;
+    transform: translate3d(0, 0, 0);
+
   }
 
   .works-svg {
@@ -525,6 +527,8 @@ body.invert .btn-works svg path {
     right: 0;
     bottom: 72px;
     max-width: 24rem;
+    transform: translate3d(0, 0, 0);
+
 
   }
 
