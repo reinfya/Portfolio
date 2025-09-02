@@ -398,6 +398,11 @@
     animation: scrollLeft 60s linear infinite;
 }
 
+.art-scroll-track:hover {
+    animation-play-state: paused;
+    /* ← ホバー時に停止 */
+}
+
 .art-scroll-track img {
     height: 230px;
     flex-shrink: 0;
